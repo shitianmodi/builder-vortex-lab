@@ -277,11 +277,16 @@ export default function ToolManagement() {
         </div>
 
         {/* User Avatar */}
-        <img 
-          className="w-16 h-16 rounded-full" 
-          src="https://api.builder.io/api/v1/image/assets/TEMP/05114ceccd61297e06295e70e07c8025accaf9fa?width=128" 
-          alt="User" 
-        />
+        <button
+          onClick={() => navigate('/personal-center')}
+          className="hover:opacity-80 transition-opacity"
+        >
+          <img
+            className="w-16 h-16 rounded-full cursor-pointer"
+            src="https://api.builder.io/api/v1/image/assets/TEMP/05114ceccd61297e06295e70e07c8025accaf9fa?width=128"
+            alt="User"
+          />
+        </button>
       </div>
 
       {/* Main Content */}
