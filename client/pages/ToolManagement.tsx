@@ -211,6 +211,20 @@ export default function ToolManagement() {
     // Toggle category expansion
   };
 
+  const handleMoveToCategory = () => {
+    setShowMoveModal(true);
+  };
+
+  const handleConfirmMove = () => {
+    // Implement move logic here
+    console.log('Moving selected items to:', selectedCategory, selectedSubCategory);
+    setShowMoveModal(false);
+  };
+
+  const handleCancelMove = () => {
+    setShowMoveModal(false);
+  };
+
   return (
     <div className="w-full h-screen bg-[#EEF1FA] flex">
       {/* Navigation Sidebar */}
