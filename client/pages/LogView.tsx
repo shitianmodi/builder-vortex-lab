@@ -29,7 +29,7 @@ const mockLogData: LogEntry[] = [
     id: '3',
     time: '00:00',
     type: '语音',
-    description: '受试者： 对话内容转文字 对话内容转文字 对话内容转文字 对话内容转文字 对话内容转文字\n咨询师： 对话内容转文字 对话内容转文字 对话内容��文字 对话内容转文字 对话内容转文字'
+    description: '受试者： 对话内容转文字 对话内容转文字 对话内容转文字 对话内容转文字 对话内容转文字\n咨询师： 对话内容转文字 对话内容转文字 对话内容转文字 对话内容转文字 对话内容转文字'
   },
   {
     id: '4',
@@ -193,6 +193,28 @@ export default function LogView() {
           </div>
         </div>
       </div>
+
+      {/* Mobile Filter Dropdown */}
+      {showMobileFilters && (
+        <div className="md:hidden w-full px-6 py-4 bg-white border-b border-[#E2E7F0]">
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="text-[#324459] text-sm font-normal mr-2">显示:</span>
+            {Object.entries(selectedFilters).map(([filter, isActive]) => (
+              <button
+                key={filter}
+                onClick={() => handleFilterToggle(filter as keyof typeof selectedFilters)}
+                className={`flex h-8 px-3 py-1 items-center gap-1 rounded-xl text-sm ${
+                  isActive
+                    ? 'bg-[#004DA9] text-white'
+                    : 'border border-[#004DA9] text-[#004DA9]'
+                }`}
+              >
+                <div className="font-normal">{filter}</div>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Main Content Area */}
       <div className="flex flex-1 gap-6 px-6 lg:px-14 pb-6 lg:pb-14 overflow-hidden">
