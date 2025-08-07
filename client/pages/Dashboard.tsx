@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Dashboard() {
   const [selectedNav, setSelectedNav] = useState('home');
@@ -117,7 +118,7 @@ export default function Dashboard() {
                 {/* Recording Content */}
                 <div>
                   <label className="block text-base mb-4 text-gray-600">
-                    记录内容
+                    记录内��
                   </label>
                   <div className="space-y-4">
                     <div 
