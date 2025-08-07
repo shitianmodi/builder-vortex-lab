@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import DataCleanupWarning from "../components/DataCleanupWarning";
 import EmptyState from "../components/EmptyState";
+=======
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+>>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
 
 interface HistoryRecord {
   id: string;
@@ -43,7 +48,11 @@ const mockData: HistoryRecord[] = [
   },
   {
     id: "3",
+<<<<<<< HEAD
     clientName: "来��者",
+=======
+    clientName: "来访者",
+>>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
     type: "photo",
     status: "completed",
     date: "2000-00-00",
@@ -116,6 +125,7 @@ export default function DataCenter() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedFormat, setSelectedFormat] = useState<
     "video" | "photo" | "all"
+<<<<<<< HEAD
   >("all");
   const [selectedStatus, setSelectedStatus] = useState<
     "pending" | "generating" | "completed" | "all"
@@ -135,12 +145,25 @@ export default function DataCenter() {
 
   const formatOptions = [
     { key: "all", label: "全部" },
+=======
+  >("video");
+  const [selectedStatus, setSelectedStatus] = useState<
+    "pending" | "generating" | "completed" | "all"
+  >("pending");
+  const [selectedTime, setSelectedTime] = useState("2025年7月");
+  const [sortBy, setSortBy] = useState("时间最近");
+
+  const formatOptions = [
+>>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
     { key: "video", label: "录像" },
     { key: "photo", label: "拍照" },
   ];
 
   const statusOptions = [
+<<<<<<< HEAD
     { key: "all", label: "全部" },
+=======
+>>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
     { key: "pending", label: "未生成" },
     { key: "generating", label: "生成中" },
     { key: "completed", label: "已完成" },
@@ -237,6 +260,7 @@ export default function DataCenter() {
   };
 
   const renderThumbnail = (type: "video" | "photo") => {
+<<<<<<< HEAD
     const imageUrl =
       type === "video"
         ? "https://cdn.builder.io/api/v1/image/assets%2F633abf5e59cd4a2c979cb3a5ea2346f6%2F6a13877e87804742ae027ea9d3d6fa5f?format=webp&width=800"
@@ -246,6 +270,12 @@ export default function DataCenter() {
       <div className="w-[185px] h-[104px] rounded-lg overflow-hidden relative flex-shrink-0">
         <img
           src={imageUrl}
+=======
+    return (
+      <div className="w-[185px] h-[104px] rounded-lg overflow-hidden relative flex-shrink-0">
+        <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/e34a83b7b0cb6d992b3d8c429519b88a0a514fb5?width=406"
+>>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
           alt="预览图"
           className="w-full h-full object-cover"
         />
@@ -347,10 +377,14 @@ export default function DataCenter() {
                     />
                   </svg>
                 </div>
+<<<<<<< HEAD
                 <button
                   onClick={() => navigate("/log-view")}
                   className="flex w-[30px] h-[30px] p-1 justify-center items-center rounded-[18px] bg-[#004DA9] hover:bg-[#003A87] transition-colors cursor-pointer"
                 >
+=======
+                <div className="flex w-[30px] h-[30px] p-1 justify-center items-center rounded-[18px] bg-[#004DA9]">
+>>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
                   <svg
                     className="w-[22px] h-[22px]"
                     viewBox="0 0 22 22"
@@ -404,10 +438,14 @@ export default function DataCenter() {
                         />
                       </svg>
                     </div>
+<<<<<<< HEAD
                     <button
                       onClick={() => navigate("/report-detail")}
                       className="flex w-[30px] h-[30px] p-1 justify-center items-center rounded-[18px] bg-[#004DA9] hover:bg-[#003d8c] transition-colors cursor-pointer"
                     >
+=======
+                    <div className="flex w-[30px] h-[30px] p-1 justify-center items-center rounded-[18px] bg-[#004DA9]">
+>>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
                       <svg
                         className="w-[22px] h-[22px]"
                         viewBox="0 0 22 22"
@@ -491,6 +529,7 @@ export default function DataCenter() {
           </div>
         </div>
 
+<<<<<<< HEAD
         <button
           onClick={() => navigate("/personal-center")}
           className="hover:opacity-80 transition-opacity"
@@ -501,6 +540,13 @@ export default function DataCenter() {
             className="w-16 h-16 rounded-full cursor-pointer"
           />
         </button>
+=======
+        <img
+          src="https://api.builder.io/api/v1/image/assets/TEMP/05114ceccd61297e06295e70e07c8025accaf9fa?width=128"
+          alt="用户头像"
+          className="w-16 h-16 rounded-full"
+        />
+>>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
       </div>
 
       {/* Main Content */}
@@ -513,6 +559,7 @@ export default function DataCenter() {
             </h1>
           </div>
           <div className="text-[#7E90B0] text-sm font-normal max-w-[270px]">
+<<<<<<< HEAD
             *沙盘过程视频仅临���存存72小时
             <br />
             如有需要可���行下载到本地
@@ -540,6 +587,11 @@ export default function DataCenter() {
             >
               恢复正常
             </button>
+=======
+            *沙盘过程视频仅临时��存72小时
+            <br />
+            如有需要可自行下载到本地
+>>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
           </div>
         </div>
 
@@ -554,6 +606,7 @@ export default function DataCenter() {
         <div className="flex justify-between items-center mb-8">
           <div className="flex items-center gap-4">
             {/* Evaluation Time */}
+<<<<<<< HEAD
             <div className="flex items-center gap-4 relative">
               <div className="text-[#324459] text-base font-normal">
                 评估时间
@@ -600,6 +653,24 @@ export default function DataCenter() {
                     ))}
                   </div>
                 )}
+=======
+            <div className="flex items-center gap-4">
+              <div className="text-[#324459] text-base font-normal">
+                评估时间
+              </div>
+              <div className="flex w-[150px] px-4 py-1 justify-between items-center rounded-2xl border border-[#B6C2DA]">
+                <div className="text-[#3D526C] text-base font-normal">
+                  {selectedTime}
+                </div>
+                <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M13.6007 4.89906C13.2687 4.56711 12.7305 4.56711 12.3986 4.89906L7.99961 9.29802L3.60065 4.89906C3.2687 4.56711 2.73051 4.56711 2.39857 4.89906C2.06662 5.231 2.06662 5.76919 2.39857 6.10114L7.39857 11.1011C7.73051 11.4331 8.2687 11.4331 8.60065 11.1011L13.6007 6.10114C13.9326 5.76919 13.9326 5.231 13.6007 4.89906Z"
+                    fill="#3D526C"
+                  />
+                </svg>
+>>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
               </div>
             </div>
 
@@ -611,7 +682,11 @@ export default function DataCenter() {
                   <button
                     key={option.key}
                     onClick={() =>
+<<<<<<< HEAD
                       setSelectedFormat(option.key as "video" | "photo" | "all")
+=======
+                      setSelectedFormat(option.key as "video" | "photo")
+>>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
                     }
                     className={`flex h-9 px-4 py-2 items-center gap-1 rounded-2xl ${
                       selectedFormat === option.key
@@ -634,11 +709,15 @@ export default function DataCenter() {
                     key={option.key}
                     onClick={() =>
                       setSelectedStatus(
+<<<<<<< HEAD
                         option.key as
                           | "pending"
                           | "generating"
                           | "completed"
                           | "all",
+=======
+                        option.key as "pending" | "generating" | "completed",
+>>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
                       )
                     }
                     className={`flex h-9 px-4 py-2 items-center gap-1 rounded-2xl ${
@@ -654,6 +733,7 @@ export default function DataCenter() {
             </div>
 
             {/* Sort */}
+<<<<<<< HEAD
             <div className="flex items-center gap-4 relative">
               <div className="text-[#324459] text-base font-normal">��序</div>
               <div className="relative" ref={sortDropdownRef}>
@@ -698,6 +778,22 @@ export default function DataCenter() {
                     ))}
                   </div>
                 )}
+=======
+            <div className="flex items-center gap-4">
+              <div className="text-[#324459] text-base font-normal">排序</div>
+              <div className="flex w-[150px] px-4 py-1 justify-between items-center rounded-2xl border border-[#B6C2DA]">
+                <div className="text-[#3D526C] text-base font-normal">
+                  {sortBy}
+                </div>
+                <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M13.6007 4.89906C13.2687 4.56711 12.7305 4.56711 12.3986 4.89906L7.99961 9.29802L3.60065 4.89906C3.2687 4.56711 2.73051 4.56711 2.39857 4.89906C2.06662 5.231 2.06662 5.76919 2.39857 6.10114L7.39857 11.1011C7.73051 11.4331 8.2687 11.4331 8.60065 11.1011L13.6007 6.10114C13.9326 5.76919 13.9326 5.231 13.6007 4.89906Z"
+                    fill="#3D526C"
+                  />
+                </svg>
+>>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
               </div>
             </div>
           </div>
@@ -738,8 +834,13 @@ export default function DataCenter() {
           <div className="flex flex-col w-7 gap-1">
             {alphabetLetters.map((letter, index) => (
               <div
+<<<<<<< HEAD
                 key={letter}
                 className={`flex h-7 flex-col justify-center items-center aspect-square rounded-2xl cursor-pointer ${
+=======
+                key={num}
+                className={`flex h-7 flex-col justify-center items-center aspect-square rounded-2xl ${
+>>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
                   index === 0 ? "bg-[#A8BDE8]" : ""
                 }`}
               >
@@ -748,7 +849,11 @@ export default function DataCenter() {
                     index === 0 ? "text-white" : "text-[#7E90B0]"
                   }`}
                 >
+<<<<<<< HEAD
                   {letter}
+=======
+                  {num}
+>>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
                 </div>
               </div>
             ))}
