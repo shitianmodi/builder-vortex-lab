@@ -357,6 +357,18 @@ export default function DataCenter() {
     );
   };
 
+  // Show empty state for network error or no data
+  if (hasNetworkError || !hasData) {
+    return (
+      <EmptyState
+        title="数据中心"
+        message={hasNetworkError ? "请连接网络以获取数据" : "暂无数据"}
+        showBackButton={true}
+        backPath="/"
+      />
+    );
+  }
+
   return (
     <div className="w-full h-screen bg-[#EEF1FA] flex">
       {/* Navigation Sidebar */}
@@ -496,7 +508,7 @@ export default function DataCenter() {
 
             {/* Sort */}
             <div className="flex items-center gap-4 relative">
-              <div className="text-[#324459] text-base font-normal">排序</div>
+              <div className="text-[#324459] text-base font-normal">��序</div>
               <div className="relative" ref={sortDropdownRef}>
                 <button
                   onClick={() => setShowSortDropdown(!showSortDropdown)}
