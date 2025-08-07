@@ -4,6 +4,8 @@ import EditWaterEntry from '../components/EditWaterEntry';
 import EditVoiceEntry from '../components/EditVoiceEntry';
 import EditNoteEntry from '../components/EditNoteEntry';
 import ConfirmationModals from '../components/ConfirmationModals';
+import ExitCheckModal from '../components/ExitCheckModal';
+import GenerateReportModal from '../components/GenerateReportModal';
 
 type FilterType = 'all' | '沙具' | '水' | '语音' | '笔记';
 
