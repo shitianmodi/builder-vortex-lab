@@ -523,7 +523,10 @@ const PersonalCenter: React.FC = () => {
           </div>
 
           {/* Logout Button */}
-          <button className="flex w-full h-12 px-4 py-2 justify-center items-center gap-2 rounded-2xl border border-[#CB2F2F] text-[#CB2F2F] hover:bg-[#CB2F2F] hover:text-white transition-colors group mb-8">
+          <button
+            onClick={() => setShowLogoutModal(true)}
+            className="flex w-full h-12 px-4 py-2 justify-center items-center gap-2 rounded-2xl border border-[#CB2F2F] text-[#CB2F2F] hover:bg-[#CB2F2F] hover:text-white transition-colors group mb-8"
+          >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="group-hover:fill-white">
               <path d="M5.54545 21C4.98295 21 4.50159 20.8043 4.10136 20.413C3.70114 20.0217 3.50068 19.5507 3.5 19V5C3.5 4.45 3.70045 3.97933 4.10136 3.588C4.50227 3.19667 4.98364 3.00067 5.54545 3H11.6818C11.9716 3 12.2147 3.096 12.411 3.288C12.6074 3.48 12.7052 3.71733 12.7045 4C12.7039 4.28267 12.6057 4.52033 12.41 4.713C12.2143 4.90567 11.9716 5.00133 11.6818 5H5.54545V19H11.6818C11.9716 19 12.2147 19.096 12.411 19.288C12.6074 19.48 12.7052 19.7173 12.7045 20C12.7039 20.2827 12.6057 20.5203 12.41 20.713C12.2143 20.9057 11.9716 21.0013 11.6818 21H5.54545ZM17.9972 13H10.6591C10.3693 13 10.1266 12.904 9.93091 12.712C9.73523 12.52 9.63705 12.2827 9.63636 12C9.63568 11.7173 9.73386 11.48 9.93091 11.288C10.128 11.096 10.3707 11 10.6591 11H17.9972L16.0795 9.125C15.892 8.94166 15.7983 8.71666 15.7983 8.45C15.7983 8.18333 15.892 7.95 16.0795 7.75C16.267 7.55 16.5057 7.44566 16.7955 7.437C17.0852 7.42833 17.3324 7.52433 17.5369 7.725L21.1932 11.3C21.3977 11.5 21.5 11.7333 21.5 12C21.5 12.2667 21.3977 12.5 21.1932 12.7L17.5369 16.275C17.3324 16.475 17.0897 16.571 16.8088 16.563C16.5278 16.555 16.2848 16.4507 16.0795 16.25C15.892 16.05 15.8027 15.8127 15.8116 15.538C15.8205 15.2633 15.9183 15.034 16.1051 14.85L17.9972 13Z" fill="#CB2F2F" className="group-hover:fill-white"/>
             </svg>
@@ -678,7 +681,7 @@ const PersonalCenter: React.FC = () => {
               {/* Completed */}
               <div>
                 <div className="flex items-center h-3 px-1 mb-4">
-                  <span className="text-[#7E90B0] text-sm">下载完成（25）</span>
+                  <span className="text-[#7E90B0] text-sm">下载完成���25）</span>
                   <div className="flex-1 h-px bg-[#E2E7F0] ml-2"></div>
                 </div>
                 <div className="space-y-0">
