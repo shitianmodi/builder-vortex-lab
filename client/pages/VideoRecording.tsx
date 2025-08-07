@@ -22,7 +22,7 @@ export default function VideoRecording() {
   const logs: LogEntry[] = [
     { timestamp: "00:00", message: "在左上位置朝向右上放置了红色小汽车" },
     { timestamp: "01:00", message: "在左上位置加入水" },
-    { timestamp: "02:00", message: "来访者与咨询师发生对话" },
+    { timestamp: "02:00", message: "来访者与咨询师发��对话" },
     { timestamp: "03:00", message: "来访者自言自语" },
     { timestamp: "04:00", message: "咨询师插入笔记" },
   ];
@@ -61,6 +61,23 @@ export default function VideoRecording() {
 
   const toggleLogs = () => {
     setLogsState((prev) => (prev === "expanded" ? "collapsed" : "expanded"));
+  };
+
+  const handleCompleteRecording = (option: 'direct' | 'review' | 'save') => {
+    switch (option) {
+      case 'direct':
+        // Direct report generation - navigate to data center
+        navigate('/dashboard');
+        break;
+      case 'review':
+        // Enter recording review - navigate to log viewer
+        navigate('/log-viewer');
+        break;
+      case 'save':
+        // Save video temporarily - return to main page
+        navigate('/dashboard');
+        break;
+    }
   };
 
   return (
