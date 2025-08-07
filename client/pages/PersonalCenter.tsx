@@ -12,10 +12,48 @@ interface DownloadTask {
   completed?: boolean;
 }
 
+interface NotificationSettings {
+  newReport: boolean;
+  downloadComplete: boolean;
+  videoExpiry: boolean;
+  newModel: boolean;
+}
+
+interface LocalDataItem {
+  name: string;
+  size: string;
+  checked: boolean;
+  warning?: string;
+}
+
 const PersonalCenter: React.FC = () => {
   const navigate = useNavigate();
   const [autoSync, setAutoSync] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('recent');
+
+  // Modal states
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
+  const [showNotificationModal, setShowNotificationModal] = useState(false);
+  const [showLocalDataModal, setShowLocalDataModal] = useState(false);
+  const [showFeedbackModal, setShowFeedbackModal] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [selectedTaskForDelete, setSelectedTaskForDelete] = useState<string | null>(null);
+
+  // Modal data states
+  const [feedbackText, setFeedbackText] = useState('');
+  const [notificationSettings, setNotificationSettings] = useState<NotificationSettings>({
+    newReport: true,
+    downloadComplete: true,
+    videoExpiry: false,
+    newModel: true
+  });
+
+  const [localDataItems, setLocalDataItems] = useState<LocalDataItem[]>([
+    { name: '系统缓存', size: '56MB', checked: false },
+    { name: '沙盘日志图文', size: '30MB', checked: true },
+    { name: '沙盘录像视频', size: '3096MB', checked: false, warning: '*已到期的云存档视频无法恢复。' },
+    { name: '报告文件', size: '56MB', checked: false }
+  ]);
 
   const downloadTasks: DownloadTask[] = [
     {
