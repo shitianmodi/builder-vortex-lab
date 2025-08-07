@@ -570,7 +570,7 @@ const PersonalCenter: React.FC = () => {
           {/* Footer Text */}
           <div className="mt-12 text-center">
             <p className="text-[#7E90B0] text-base leading-7">
-              版本信息及版���信息几行字<br />
+              版本信息及版权信息几行字<br />
               企业名称及联系方式几行字企业名称及联系方式几行字
             </p>
           </div>
@@ -757,7 +757,13 @@ const PersonalCenter: React.FC = () => {
                       ) : (
                         <>
                           <ActionButton type="open" />
-                          <ActionButton type="delete" />
+                          <ActionButton
+                            type="delete"
+                            onClick={() => {
+                              setSelectedTaskForDelete(task.id);
+                              setShowDeleteModal(true);
+                            }}
+                          />
                         </>
                       )}
                     </div>
