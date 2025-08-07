@@ -26,6 +26,10 @@ export default function Dashboard() {
     navigate("/informed-consent");
   };
 
+  const handleStartPhotoRecognition = () => {
+    navigate("/photo-capture");
+  };
+
   return (
     <div className="min-h-screen w-full bg-gray-100">
       {/* Navigation Sidebar */}
