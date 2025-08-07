@@ -138,7 +138,7 @@ export default function DataCenter() {
   const statusOptions = [
     { key: 'all', label: '全部' },
     { key: 'pending', label: '未生成' },
-    { key: 'generating', label: '生��中' },
+    { key: 'generating', label: '生成中' },
     { key: 'completed', label: '已完成' }
   ];
 
@@ -440,12 +440,6 @@ export default function DataCenter() {
             >
               恢复正常
             </button>
-            <button
-              onClick={() => navigate('/report-detail')}
-              className="px-3 py-1 text-xs bg-blue-100 text-blue-600 rounded hover:bg-blue-200"
-            >
-              查看报告
-            </button>
           </div>
         </div>
 
@@ -518,7 +512,7 @@ export default function DataCenter() {
 
             {/* Status Filter */}
             <div className="flex items-center gap-4">
-              <div className="text-[#324459] text-base font-normal">状态</div>
+              <div className="text-[#324459] text-base font-normal">状��</div>
               <div className="flex items-center gap-1">
                 {statusOptions.map((option) => (
                   <button
