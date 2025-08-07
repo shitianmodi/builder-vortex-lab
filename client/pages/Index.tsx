@@ -2,15 +2,6 @@ import { useState } from 'react';
 
 export default function Index() {
   const [showPassword, setShowPassword] = useState(false);
-  const [formData, setFormData] = useState({
-    schoolCode: '',
-    username: '',
-    password: ''
-  });
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
 
   return (
     <div className="min-h-screen w-full relative overflow-hidden">
@@ -20,51 +11,34 @@ export default function Index() {
         style={{
           backgroundImage: "url('https://api.builder.io/api/v1/image/assets/TEMP/2a0a7ce7d4a0d5848c8121f506c9ac49ff2fd82e?width=2880')"
         }}
-      >
-        <div className="absolute inset-0 bg-black/10"></div>
-      </div>
+      />
       
       {/* Main Content */}
-      <div className="relative z-10 min-h-screen flex items-center justify-between px-8 lg:px-16 xl:px-24">
+      <div className="relative z-10 min-h-screen flex items-center justify-between px-4 sm:px-8 lg:px-16 xl:px-24 2xl:px-32">
         {/* Left Section - Branding */}
         <div className="flex flex-col items-start gap-4 max-w-md">
           {/* Decorative Icon */}
-          <div className="mb-8">
+          <div className="mb-4 sm:mb-6 lg:mb-8">
             <img 
               src="https://api.builder.io/api/v1/image/assets/TEMP/95148d1d1e4fa8a979be1c985ab71a04a0a44f93?width=400"
-              alt="Heart icon"
+              alt="心理沙盘图标"
               className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 xl:w-50 xl:h-50 object-contain"
             />
           </div>
           
           {/* Title and Subtitle */}
           <div className="flex flex-col gap-4 w-full">
-            <h1 
-              className="text-white text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider"
-              style={{ fontFamily: 'HONOR Sans CN, -apple-system, Roboto, Helvetica, sans-serif', letterSpacing: '4.8px' }}
-            >
+            <h1 className="text-white text-4xl lg:text-5xl xl:text-6xl font-bold tracking-widest">
               心理沙盘
             </h1>
             
-            <h2 
-              className="text-white text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-medium tracking-wider"
-              style={{ fontFamily: 'HONOR Sans CN, -apple-system, Roboto, Helvetica, sans-serif', letterSpacing: '3.6px' }}
-            >
+            <h2 className="text-white text-2xl lg:text-3xl xl:text-4xl font-medium tracking-wider">
               AI动态识别分析系统
             </h2>
             
             {/* Version Badge */}
-            <div 
-              className="inline-flex px-4 py-2 justify-center items-center rounded-full self-start"
-              style={{ backgroundColor: 'var(--bg-b3)' }}
-            >
-              <span 
-                className="text-lg sm:text-xl lg:text-2xl font-semibold"
-                style={{ 
-                  color: 'var(--theme-blue-1)',
-                  fontFamily: 'HONOR Sans CN, -apple-system, Roboto, Helvetica, sans-serif'
-                }}
-              >
+            <div className="inline-flex px-4 py-2 justify-center items-center rounded-full bg-blue-300 self-start">
+              <span className="text-lg lg:text-xl xl:text-2xl font-semibold text-blue-900">
                 MindAI-PSD M1
               </span>
             </div>
@@ -72,62 +46,32 @@ export default function Index() {
         </div>
 
         {/* Right Section - Login Form */}
-        <div className="bg-white rounded-3xl p-8 w-full max-w-2xl ml-8">
-          <h3 
-            className="text-2xl font-semibold mb-8"
-            style={{ 
-              color: 'var(--text-b2)',
-              fontFamily: 'HONOR Sans CN, -apple-system, Roboto, Helvetica, sans-serif'
-            }}
-          >
+        <div className="bg-white rounded-3xl p-6 lg:p-8 w-full max-w-2xl ml-4 sm:ml-8">
+          <h3 className="text-xl lg:text-2xl font-semibold mb-6 lg:mb-8 text-gray-700">
             初次使用前请绑定学校
           </h3>
           
           <div className="space-y-6">
             {/* School Code Input */}
-            <div className="flex items-center gap-6">
-              <label 
-                className="text-base min-w-fit"
-                style={{ 
-                  color: 'var(--text-g2)',
-                  fontFamily: 'HONOR Sans CN, -apple-system, Roboto, Helvetica, sans-serif'
-                }}
-              >
+            <div className="flex items-center gap-4 lg:gap-6">
+              <label className="text-base min-w-fit text-gray-600">
                 学校代码
               </label>
-              <div 
-                className="flex-1 h-16 px-3 flex items-center rounded-2xl"
-                style={{ backgroundColor: 'var(--bg-w2)' }}
-              >
+              <div className="flex-1 h-14 lg:h-16 px-3 flex items-center rounded-2xl bg-gray-100">
                 <input
                   type="text"
                   placeholder="请输入学校代码"
-                  value={formData.schoolCode}
-                  onChange={(e) => handleInputChange('schoolCode', e.target.value)}
-                  className="w-full bg-transparent outline-none text-base"
-                  style={{ 
-                    color: 'var(--text-g4)',
-                    fontFamily: 'HONOR Sans CN, -apple-system, Roboto, Helvetica, sans-serif'
-                  }}
+                  className="w-full bg-transparent outline-none text-base text-gray-500"
                 />
               </div>
             </div>
 
             {/* Username Input */}
-            <div className="flex items-center gap-6">
-              <label 
-                className="text-base min-w-fit text-right w-16"
-                style={{ 
-                  color: 'var(--text-g2)',
-                  fontFamily: 'HONOR Sans CN, -apple-system, Roboto, Helvetica, sans-serif'
-                }}
-              >
+            <div className="flex items-center gap-4 lg:gap-6">
+              <label className="text-base min-w-fit text-right w-12 lg:w-16 text-gray-600">
                 账号
               </label>
-              <div 
-                className="flex-1 h-16 px-3 flex items-center gap-3 rounded-2xl"
-                style={{ backgroundColor: 'var(--bg-w2)' }}
-              >
+              <div className="flex-1 h-14 lg:h-16 px-3 flex items-center gap-3 rounded-2xl bg-gray-100">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                   <path d="M22.6666 7.99999C22.6666 11.6819 19.6819 14.6667 16 14.6667C12.3181 14.6667 9.33331 11.6819 9.33331 7.99999C9.33331 4.3181 12.3181 1.33333 16 1.33333C19.6819 1.33333 22.6666 4.3181 22.6666 7.99999Z" fill="#A8ABB2"/>
                   <path d="M5.33331 25.3333C5.33331 20.1787 9.51199 16 14.6666 16H17.3333C22.488 16 26.6666 20.1787 26.6666 25.3333V28C26.6666 28.7364 26.0697 29.3333 25.3333 29.3333H6.66665C5.93027 29.3333 5.33331 28.7364 5.33331 28V25.3333Z" fill="#A8ABB2"/>
@@ -135,32 +79,17 @@ export default function Index() {
                 <input
                   type="text"
                   placeholder="请输入您的云平台账号"
-                  value={formData.username}
-                  onChange={(e) => handleInputChange('username', e.target.value)}
-                  className="flex-1 bg-transparent outline-none text-base"
-                  style={{ 
-                    color: 'var(--text-g4)',
-                    fontFamily: 'HONOR Sans CN, -apple-system, Roboto, Helvetica, sans-serif'
-                  }}
+                  className="flex-1 bg-transparent outline-none text-base text-gray-500"
                 />
               </div>
             </div>
 
             {/* Password Input */}
-            <div className="flex items-center gap-6">
-              <label 
-                className="text-base min-w-fit text-right w-16"
-                style={{ 
-                  color: 'var(--text-g2)',
-                  fontFamily: 'HONOR Sans CN, -apple-system, Roboto, Helvetica, sans-serif'
-                }}
-              >
+            <div className="flex items-center gap-4 lg:gap-6">
+              <label className="text-base min-w-fit text-right w-12 lg:w-16 text-gray-600">
                 密码
               </label>
-              <div 
-                className="flex-1 h-16 px-3 flex items-center justify-between rounded-2xl"
-                style={{ backgroundColor: 'var(--bg-w2)' }}
-              >
+              <div className="flex-1 h-14 lg:h-16 px-3 flex items-center justify-between rounded-2xl bg-gray-100">
                 <div className="flex items-center gap-3 flex-1">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path fillRule="evenodd" clipRule="evenodd" d="M20 10.6667V8C20 5.79086 18.2091 3.99999 16 3.99999C13.7908 3.99999 12 5.79086 12 8V10.6667H20ZM16 1.33333C12.3181 1.33333 9.33331 4.3181 9.33331 8V13.3333H22.6666V8C22.6666 4.3181 19.6819 1.33333 16 1.33333Z" fill="#A8ABB2"/>
@@ -169,13 +98,7 @@ export default function Index() {
                   <input
                     type={showPassword ? "text" : "password"}
                     placeholder="请输入您的云平台密码"
-                    value={formData.password}
-                    onChange={(e) => handleInputChange('password', e.target.value)}
-                    className="flex-1 bg-transparent outline-none text-base"
-                    style={{ 
-                      color: 'var(--text-g4)',
-                      fontFamily: 'HONOR Sans CN, -apple-system, Roboto, Helvetica, sans-serif'
-                    }}
+                    className="flex-1 bg-transparent outline-none text-base text-gray-500"
                   />
                 </div>
                 <button 
@@ -191,32 +114,17 @@ export default function Index() {
           </div>
 
           {/* Divider */}
-          <div className="my-8">
-            <div 
-              className="h-px w-full"
-              style={{ backgroundColor: 'var(--frame-b1)' }}
-            ></div>
+          <div className="my-6 lg:my-8">
+            <div className="h-px w-full bg-gray-300"></div>
           </div>
 
           {/* Footer */}
-          <div className="flex justify-between items-center">
-            <span 
-              className="text-base"
-              style={{ 
-                color: 'var(--text-b3)',
-                fontFamily: 'HONOR Sans CN, -apple-system, Roboto, Helvetica, sans-serif'
-              }}
-            >
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <span className="text-base text-gray-500">
               验证通过后不可修改绑定的学校
             </span>
             
-            <button 
-              className="px-4 py-3 rounded-2xl text-white text-lg font-semibold min-w-[200px]"
-              style={{ 
-                backgroundColor: 'var(--theme-blue-00)',
-                fontFamily: 'HONOR Sans CN, -apple-system, Roboto, Helvetica, sans-serif'
-              }}
-            >
+            <button className="px-6 py-3 rounded-2xl bg-blue-700 text-white text-lg font-semibold min-w-[160px] lg:min-w-[200px]">
               验证
             </button>
           </div>
