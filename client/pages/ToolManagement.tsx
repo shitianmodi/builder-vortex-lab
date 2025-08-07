@@ -516,7 +516,10 @@ export default function ToolManagement() {
               <span className="text-[#CB2F2F] font-bold">{selectedItems.length}</span>
               <span className="text-[#303133]"> 个沙具</span>
             </div>
-            <button className="flex h-12 px-4 py-2 justify-center items-center gap-2 rounded-2xl bg-[#004DA9] hover:bg-[#003d8c] transition-colors">
+            <button
+              onClick={handleMoveToCategory}
+              className="flex h-12 px-4 py-2 justify-center items-center gap-2 rounded-2xl bg-[#004DA9] hover:bg-[#003d8c] transition-colors"
+            >
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
                 <path fillRule="evenodd" clipRule="evenodd" d="M11.4972 4.08329C11.0676 4.52768 11.0676 5.24818 11.4972 5.69257L16.4944 10.8621H4.85C4.24249 10.8621 3.75 11.3715 3.75 12C3.75 12.6285 4.24249 13.1379 4.85 13.1379H16.4944L11.4972 18.3074C11.0676 18.7518 11.0676 19.4723 11.4972 19.9167C11.9268 20.3611 12.6232 20.3611 13.0528 19.9167L19.9278 12.8046C20.3574 12.3602 20.3574 11.6398 19.9278 11.1954L13.0528 4.08329C12.6232 3.6389 11.9268 3.6389 11.4972 4.08329Z" fill="white"/>
               </svg>
