@@ -29,7 +29,7 @@ const mockLogData: LogEntry[] = [
     id: '3',
     time: '00:00',
     type: '语音',
-    description: '受试者： 对话内容转文字 对话内容转文字 对话内容转文字 对话内容转文字 对话内容转文字\n咨询师： 对话内容转文字 对话内容转文字 对话内容转文字 对话内容转文字 对话内容转文字'
+    description: '受试者： 对话内容转文字 对话内容转文字 对话内容转文字 对话内容转文字 对话内容转文字\n咨询师： 对话内容转文字 对话内容转文字 对话内容��文字 对话内容转文字 对话内容转文字'
   },
   {
     id: '4',
@@ -145,6 +145,19 @@ export default function LogView() {
         </div>
 
         <div className="flex items-center gap-4 lg:gap-9">
+          {/* Mobile Filter Toggle */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setShowMobileFilters(!showMobileFilters)}
+              className="flex h-10 px-3 py-2 justify-center items-center gap-2 rounded-2xl border border-[#004DA9] text-[#004DA9]"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                <path d="M3 7h18M10 12h11M3 17h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+              <span className="text-sm font-normal">筛选</span>
+            </button>
+          </div>
+
           <div className="hidden md:flex items-center gap-4">
             <div className="text-[#324459] text-sm lg:text-base font-normal leading-7">显示</div>
             <div className="flex items-center gap-[6px] flex-wrap">
