@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import DataCleanupWarning from "../components/DataCleanupWarning";
 import EmptyState from "../components/EmptyState";
-=======
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
->>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
 
 interface HistoryRecord {
   id: string;
@@ -48,11 +43,7 @@ const mockData: HistoryRecord[] = [
   },
   {
     id: "3",
-<<<<<<< HEAD
-    clientName: "来��者",
-=======
     clientName: "来访者",
->>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
     type: "photo",
     status: "completed",
     date: "2000-00-00",
@@ -125,12 +116,11 @@ export default function DataCenter() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedFormat, setSelectedFormat] = useState<
     "video" | "photo" | "all"
-<<<<<<< HEAD
   >("all");
   const [selectedStatus, setSelectedStatus] = useState<
     "pending" | "generating" | "completed" | "all"
   >("all");
-  const [selectedTime, setSelectedTime] = useState("2025��7月");
+  const [selectedTime, setSelectedTime] = useState("2025年7月");
   const [sortBy, setSortBy] = useState("时间最近");
   const [selectedRecords, setSelectedRecords] = useState<string[]>([]);
   const [showTimeDropdown, setShowTimeDropdown] = useState(false);
@@ -145,25 +135,12 @@ export default function DataCenter() {
 
   const formatOptions = [
     { key: "all", label: "全部" },
-=======
-  >("video");
-  const [selectedStatus, setSelectedStatus] = useState<
-    "pending" | "generating" | "completed" | "all"
-  >("pending");
-  const [selectedTime, setSelectedTime] = useState("2025年7月");
-  const [sortBy, setSortBy] = useState("时间最近");
-
-  const formatOptions = [
->>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
     { key: "video", label: "录像" },
     { key: "photo", label: "拍照" },
   ];
 
   const statusOptions = [
-<<<<<<< HEAD
     { key: "all", label: "全部" },
-=======
->>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
     { key: "pending", label: "未生成" },
     { key: "generating", label: "生成中" },
     { key: "completed", label: "已完成" },
@@ -260,7 +237,6 @@ export default function DataCenter() {
   };
 
   const renderThumbnail = (type: "video" | "photo") => {
-<<<<<<< HEAD
     const imageUrl =
       type === "video"
         ? "https://cdn.builder.io/api/v1/image/assets%2F633abf5e59cd4a2c979cb3a5ea2346f6%2F6a13877e87804742ae027ea9d3d6fa5f?format=webp&width=800"
@@ -270,12 +246,6 @@ export default function DataCenter() {
       <div className="w-[185px] h-[104px] rounded-lg overflow-hidden relative flex-shrink-0">
         <img
           src={imageUrl}
-=======
-    return (
-      <div className="w-[185px] h-[104px] rounded-lg overflow-hidden relative flex-shrink-0">
-        <img
-          src="https://api.builder.io/api/v1/image/assets/TEMP/e34a83b7b0cb6d992b3d8c429519b88a0a514fb5?width=406"
->>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
           alt="预览图"
           className="w-full h-full object-cover"
         />
@@ -356,7 +326,7 @@ export default function DataCenter() {
               <div className="flex items-center gap-1 flex-1">
                 <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
                   <path
-                    d="M6.77778 12.375C6.60463 12.375 6.45959 12.315 6.34267 12.195C6.22574 12.075 6.16707 11.9267 6.16667 11.75C6.16626 11.5733 6.22493 11.425 6.34267 11.305C6.46041 11.185 6.60544 11.125 6.77778 11.125H12.8889C13.062 11.125 13.2073 11.185 13.3246 11.305C13.4419 11.425 13.5004 11.5733 13.5 11.75C13.4996 11.9267 13.4409 12.0752 13.324 12.1956C13.2071 12.316 13.062 12.3758 12.8889 12.375H6.77778ZM6.77778 8.62499C6.60463 8.62499 6.45959 8.56499 6.34267 8.44499C6.22574 8.32499 6.16707 8.17666 6.16667 7.99999C6.16626 7.82333 6.22493 7.67499 6.34267 7.55499C6.46041 7.43499 6.60544 7.37499 6.77778 7.37499H12.8889C13.062 7.37499 13.2073 7.43499 13.3246 7.55499C13.4419 7.67499 13.5004 7.82333 13.5 7.99999C13.4996 8.17666 13.4409 8.3252 13.324 8.44562C13.2071 8.56603 13.062 8.62583 12.8889 8.62499H6.77778ZM6.77778 4.875C6.60463 4.875 6.45959 4.815 6.34267 4.695C6.22574 4.575 6.16707 4.42667 6.16667 4.25C6.16626 4.07334 6.22493 3.925 6.34267 3.805C6.46041 3.685 6.60544 3.625 6.77778 3.625H12.8889C13.062 3.625 13.2073 3.685 13.3246 3.805C13.4419 3.925 13.5004 4.07334 13.5 4.25C13.4996 4.42667 13.4409 4.57521 13.324 4.69563C13.2071 4.81604 13.062 4.87583 12.8889 4.875H6.77778ZM3.72222 13C3.38611 13 3.09848 12.8777 2.85933 12.6331C2.62019 12.3885 2.50041 12.0942 2.5 11.75C2.49959 11.4058 2.61937 11.1117 2.85933 10.8675C3.0993 10.6233 3.38693 10.5008 3.72222 10.5C4.05752 10.4992 4.34535 10.6217 4.58572 10.8675C4.82609 11.1133 4.94567 11.4075 4.94444 11.75C4.94322 12.0925 4.82365 12.3869 4.58572 12.6331C4.3478 12.8794 4.05996 13.0017 3.72222 13ZM3.72222 9.24999C3.38611 9.24999 3.09848 9.1277 2.85933 8.88312C2.62019 8.63853 2.50041 8.34416 2.5 7.99999C2.49959 7.65583 2.61937 7.36166 2.85933 7.1175C3.0993 6.87333 3.38693 6.75083 3.72222 6.75C4.05752 6.74916 4.34535 6.87166 4.58572 7.1175C4.82609 7.36333 4.94567 7.65749 4.94444 7.99999C4.94322 8.34249 4.82365 8.63687 4.58572 8.88312C4.3478 9.12937 4.05996 9.25166 3.72222 9.24999ZM3.72222 5.5C3.38611 5.5 3.09848 5.37771 2.85933 5.13312C2.62019 4.88854 2.50041 4.59417 2.5 4.25C2.49959 3.90584 2.61937 3.61167 2.85933 3.3675C3.0993 3.12334 3.38693 3.00084 3.72222 3C4.05752 2.99917 4.34535 3.12167 4.58572 3.3675C4.82609 3.61334 4.94567 3.9075 4.94444 4.25C4.94322 4.5925 4.82365 4.88688 4.58572 5.13312C4.3478 5.37937 4.05996 5.50167 3.72222 5.5Z"
+                    d="M6.77778 12.375C6.60463 12.375 6.45959 12.315 6.34267 12.195C6.22574 12.075 6.16707 11.9267 6.16667 11.75C6.16626 11.5733 6.22493 11.425 6.34267 11.305C6.46041 11.185 6.60544 11.125 6.77778 11.125H12.8889C13.062 11.125 13.2073 11.185 13.3246 11.305C13.4419 11.425 13.5004 11.5733 13.5 11.75C13.4996 11.9267 13.4409 12.0752 13.324 12.1956C13.2071 12.316 13.062 12.3758 12.8889 12.375H6.77778ZM6.77778 8.62499C6.60463 8.62499 6.45959 8.56499 6.34267 8.44499C6.22574 8.32499 6.16707 8.17666 6.16667 7.99999C6.16626 7.82333 6.22493 7.67499 6.34267 7.55499C6.46041 7.43499 6.60544 7.37499 6.77778 7.37499H12.8889C13.062 7.37499 13.2073 7.43499 13.3246 7.55499C13.4419 7.67499 13.5004 7.82333 13.5 7.99999C13.4996 8.17666 13.4409 8.3252 13.324 8.44562C13.2071 8.56603 13.062 8.62583 12.8889 8.62499H6.77778ZM6.77778 4.875C6.60463 4.875 6.45959 4.815 6.34267 4.695C6.22574 4.575 6.16707 4.42667 6.16667 4.25C6.16626 4.07334 6.22493 3.925 6.34267 3.805C6.46041 3.685 6.60544 3.625 6.77778 3.625H12.8889C13.062 3.625 13.2073 3.685 13.3246 3.805C13.4419 3.925 13.5004 4.07334 13.5 4.25C13.4996 4.42667 13.4409 4.57521 13.324 4.69563C13.2071 4.81604 13.062 4.87583 12.8889 4.875H6.77778ZM3.72222 13C3.38611 13 3.09848 12.8777 2.85933 12.6331C2.62019 12.3885 2.50041 12.0942 2.5 11.75C2.49959 11.4058 2.61937 11.1117 2.85933 10.8675C3.0993 10.6233 3.38693 10.5008 3.72222 10.5C4.05752 10.4992 4.34535 10.6217 4.58572 10.8675C4.82609 11.1133 4.94567 11.4075 4.94444 11.75C4.94322 12.0925 4.82365 12.3869 4.58572 12.6331C4.3478 12.8794 4.05996 13.0017 3.72222 13ZM3.72222 9.24999C3.38611 9.24999 3.09848 9.1277 2.85933 8.88312C2.62019 8.63853 2.50041 8.34416 2.5 7.99999C2.49959 7.65583 2.61937 7.36166 2.85933 7.1175C3.0993 6.87333 3.38693 6.75083 3.72222 6.75C4.05752 6.74916 4.34535 6.87166 4.58572 7.1175C4.82609 7.36333 4.94567 7.65749 4.94444 7.99999C4.94322 8.34249 4.82365 8.63687 4.58572 8.88312C4.3478 9.12937 4.05996 9.25166 3.72222 9.24999ZM3.72222 5.5C3.38611 5.5 3.09848 5.3777 2.85933 5.13312C2.62019 4.88853 2.50041 4.59416 2.5 4.24999C2.49959 3.90583 2.61937 3.61166 2.85933 3.3675C3.0993 3.12333 3.38693 3.00083 3.72222 3C4.05752 2.99916 4.34535 3.12166 4.58572 3.3675C4.82609 3.61333 4.94567 3.90749 4.94444 4.24999C4.94322 4.59249 4.82365 4.88687 4.58572 5.13312C4.3478 5.37937 4.05996 5.50166 3.72222 5.5Z"
                     fill="#606266"
                   />
                 </svg>
@@ -377,14 +347,10 @@ export default function DataCenter() {
                     />
                   </svg>
                 </div>
-<<<<<<< HEAD
                 <button
                   onClick={() => navigate("/log-view")}
                   className="flex w-[30px] h-[30px] p-1 justify-center items-center rounded-[18px] bg-[#004DA9] hover:bg-[#003A87] transition-colors cursor-pointer"
                 >
-=======
-                <div className="flex w-[30px] h-[30px] p-1 justify-center items-center rounded-[18px] bg-[#004DA9]">
->>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
                   <svg
                     className="w-[22px] h-[22px]"
                     viewBox="0 0 22 22"
@@ -438,14 +404,10 @@ export default function DataCenter() {
                         />
                       </svg>
                     </div>
-<<<<<<< HEAD
                     <button
                       onClick={() => navigate("/report-detail")}
                       className="flex w-[30px] h-[30px] p-1 justify-center items-center rounded-[18px] bg-[#004DA9] hover:bg-[#003d8c] transition-colors cursor-pointer"
                     >
-=======
-                    <div className="flex w-[30px] h-[30px] p-1 justify-center items-center rounded-[18px] bg-[#004DA9]">
->>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
                       <svg
                         className="w-[22px] h-[22px]"
                         viewBox="0 0 22 22"
@@ -529,7 +491,6 @@ export default function DataCenter() {
           </div>
         </div>
 
-<<<<<<< HEAD
         <button
           onClick={() => navigate("/personal-center")}
           className="hover:opacity-80 transition-opacity"
@@ -540,13 +501,6 @@ export default function DataCenter() {
             className="w-16 h-16 rounded-full cursor-pointer"
           />
         </button>
-=======
-        <img
-          src="https://api.builder.io/api/v1/image/assets/TEMP/05114ceccd61297e06295e70e07c8025accaf9fa?width=128"
-          alt="用户头像"
-          className="w-16 h-16 rounded-full"
-        />
->>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
       </div>
 
       {/* Main Content */}
@@ -559,10 +513,9 @@ export default function DataCenter() {
             </h1>
           </div>
           <div className="text-[#7E90B0] text-sm font-normal max-w-[270px]">
-<<<<<<< HEAD
-            *沙盘过程视频仅临���存存72小时
+            *沙盘过程视频仅临时存存72小时
             <br />
-            如有需要可���行下载到本地
+            如有需要可自行下载到本地
           </div>
           {/* Test buttons for empty states */}
           <div className="flex gap-2 ml-auto">
@@ -587,11 +540,6 @@ export default function DataCenter() {
             >
               恢复正常
             </button>
-=======
-            *沙盘过程视频仅临时��存72小时
-            <br />
-            如有需要可自行下载到本地
->>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
           </div>
         </div>
 
@@ -606,7 +554,6 @@ export default function DataCenter() {
         <div className="flex justify-between items-center mb-8">
           <div className="flex items-center gap-4">
             {/* Evaluation Time */}
-<<<<<<< HEAD
             <div className="flex items-center gap-4 relative">
               <div className="text-[#324459] text-base font-normal">
                 评估时间
@@ -653,24 +600,6 @@ export default function DataCenter() {
                     ))}
                   </div>
                 )}
-=======
-            <div className="flex items-center gap-4">
-              <div className="text-[#324459] text-base font-normal">
-                评估时间
-              </div>
-              <div className="flex w-[150px] px-4 py-1 justify-between items-center rounded-2xl border border-[#B6C2DA]">
-                <div className="text-[#3D526C] text-base font-normal">
-                  {selectedTime}
-                </div>
-                <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M13.6007 4.89906C13.2687 4.56711 12.7305 4.56711 12.3986 4.89906L7.99961 9.29802L3.60065 4.89906C3.2687 4.56711 2.73051 4.56711 2.39857 4.89906C2.06662 5.231 2.06662 5.76919 2.39857 6.10114L7.39857 11.1011C7.73051 11.4331 8.2687 11.4331 8.60065 11.1011L13.6007 6.10114C13.9326 5.76919 13.9326 5.231 13.6007 4.89906Z"
-                    fill="#3D526C"
-                  />
-                </svg>
->>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
               </div>
             </div>
 
@@ -682,11 +611,7 @@ export default function DataCenter() {
                   <button
                     key={option.key}
                     onClick={() =>
-<<<<<<< HEAD
                       setSelectedFormat(option.key as "video" | "photo" | "all")
-=======
-                      setSelectedFormat(option.key as "video" | "photo")
->>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
                     }
                     className={`flex h-9 px-4 py-2 items-center gap-1 rounded-2xl ${
                       selectedFormat === option.key
@@ -702,22 +627,18 @@ export default function DataCenter() {
 
             {/* Status Filter */}
             <div className="flex items-center gap-4">
-              <div className="text-[#324459] text-base font-normal">状��</div>
+              <div className="text-[#324459] text-base font-normal">状态</div>
               <div className="flex items-center gap-1">
                 {statusOptions.map((option) => (
                   <button
                     key={option.key}
                     onClick={() =>
                       setSelectedStatus(
-<<<<<<< HEAD
                         option.key as
                           | "pending"
                           | "generating"
                           | "completed"
                           | "all",
-=======
-                        option.key as "pending" | "generating" | "completed",
->>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
                       )
                     }
                     className={`flex h-9 px-4 py-2 items-center gap-1 rounded-2xl ${
@@ -733,9 +654,8 @@ export default function DataCenter() {
             </div>
 
             {/* Sort */}
-<<<<<<< HEAD
             <div className="flex items-center gap-4 relative">
-              <div className="text-[#324459] text-base font-normal">��序</div>
+              <div className="text-[#324459] text-base font-normal">排序</div>
               <div className="relative" ref={sortDropdownRef}>
                 <button
                   onClick={() => setShowSortDropdown(!showSortDropdown)}
@@ -778,22 +698,6 @@ export default function DataCenter() {
                     ))}
                   </div>
                 )}
-=======
-            <div className="flex items-center gap-4">
-              <div className="text-[#324459] text-base font-normal">排序</div>
-              <div className="flex w-[150px] px-4 py-1 justify-between items-center rounded-2xl border border-[#B6C2DA]">
-                <div className="text-[#3D526C] text-base font-normal">
-                  {sortBy}
-                </div>
-                <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M13.6007 4.89906C13.2687 4.56711 12.7305 4.56711 12.3986 4.89906L7.99961 9.29802L3.60065 4.89906C3.2687 4.56711 2.73051 4.56711 2.39857 4.89906C2.06662 5.231 2.06662 5.76919 2.39857 6.10114L7.39857 11.1011C7.73051 11.4331 8.2687 11.4331 8.60065 11.1011L13.6007 6.10114C13.9326 5.76919 13.9326 5.231 13.6007 4.89906Z"
-                    fill="#3D526C"
-                  />
-                </svg>
->>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
               </div>
             </div>
           </div>
@@ -810,7 +714,7 @@ export default function DataCenter() {
               />
             </div>
             <button className="flex h-9 px-4 py-2 justify-center items-center gap-2 rounded-2xl bg-[#004DA9]">
-              <div className="text-white text-lg font-semibold">���索</div>
+              <div className="text-white text-lg font-semibold">搜索</div>
             </button>
             <button
               onClick={() => navigate("/recording-review")}
@@ -834,13 +738,8 @@ export default function DataCenter() {
           <div className="flex flex-col w-7 gap-1">
             {alphabetLetters.map((letter, index) => (
               <div
-<<<<<<< HEAD
                 key={letter}
                 className={`flex h-7 flex-col justify-center items-center aspect-square rounded-2xl cursor-pointer ${
-=======
-                key={num}
-                className={`flex h-7 flex-col justify-center items-center aspect-square rounded-2xl ${
->>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
                   index === 0 ? "bg-[#A8BDE8]" : ""
                 }`}
               >
@@ -849,11 +748,7 @@ export default function DataCenter() {
                     index === 0 ? "text-white" : "text-[#7E90B0]"
                   }`}
                 >
-<<<<<<< HEAD
                   {letter}
-=======
-                  {num}
->>>>>>> eb03ca267cfdb97064d5a876167cd1a8d069c987
                 </div>
               </div>
             ))}
@@ -915,7 +810,7 @@ export default function DataCenter() {
                     fill="white"
                   />
                 </svg>
-                <div className="text-white text-lg font-semibold">删除记录</div>
+                <div className="text-white text-lg font-semibold">删���记录</div>
               </button>
             </div>
           </div>
