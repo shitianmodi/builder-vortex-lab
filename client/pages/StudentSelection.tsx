@@ -23,8 +23,8 @@ export default function StudentSelection() {
 
   const handleStart = () => {
     if (selectedStudent) {
-      // Navigate to next step in the flow
-      navigate('/dashboard'); // For now, go back to dashboard
+      // Navigate to video recording page
+      navigate('/video-recording');
     }
   };
 
