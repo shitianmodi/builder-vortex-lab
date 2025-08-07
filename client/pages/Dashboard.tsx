@@ -236,6 +236,7 @@ export default function Dashboard() {
 
             {/* Start Button */}
             <button
+              onClick={handleStartVideoRecognition}
               className="w-full py-3 mt-8 rounded-2xl text-white text-2xl font-semibold bg-blue-700 hover:bg-blue-800"
             >
               开始
