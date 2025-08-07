@@ -151,7 +151,7 @@ export default function LogViewer() {
           {/* Close Button */}
           <div className="flex items-center gap-4">
             <button
-              onClick={handleClose}
+              onClick={handleExit}
               className="flex h-12 px-4 py-2 justify-center items-center gap-2 rounded-2xl border border-[#CB2F2F] hover:bg-red-50 transition-colors"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
