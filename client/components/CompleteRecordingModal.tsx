@@ -26,7 +26,7 @@ export default function CompleteRecordingModal({ isOpen, onClose, onConfirm, mod
             <h2 className="text-[#3D526C] text-2xl font-semibold">完成{mode === 'photo' ? '拍摄' : '录像'}</h2>
             <p className="text-[#CB2F2F] text-base">完成后无法继续当前{mode === 'photo' ? '拍摄' : '录像'}。</p>
           </div>
-          <p className="text-[#A8ABB2] text-base">*生成报告可能需要3~5分钟</p>
+          <p className="text-[#A8ABB2] text-base">*生成报告可能��要3~5分钟</p>
         </div>
 
         {/* Options */}
@@ -44,7 +44,7 @@ export default function CompleteRecordingModal({ isOpen, onClose, onConfirm, mod
               </svg>
               <div className="flex flex-col gap-1">
                 <span className="text-[#324459] text-lg font-semibold">直接生成报告</span>
-                <span className="text-[#909399] text-base">我已确认识别内容，可以直接生成报告。</span>
+                <span className="text-[#909399] text-base">{mode === 'photo' ? '不检查识别内容，直接生成报告' : '我已确认识别内容，可以直接生成报告。'}</span>
               </div>
             </div>
             <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
