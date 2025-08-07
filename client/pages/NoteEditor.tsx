@@ -54,7 +54,8 @@ const NoteEditor: React.FC<NoteEditorProps> = () => {
   };
 
   const adjustTime = (seconds: number) => {
-    const totalSeconds = currentTime.minutes * 60 + currentTime.seconds + seconds;
+    const totalSeconds =
+      currentTime.minutes * 60 + currentTime.seconds + seconds;
     const newMinutes = Math.floor(Math.max(0, totalSeconds) / 60);
     const newSeconds = Math.max(0, totalSeconds) % 60;
     setCurrentTime({ minutes: newMinutes, seconds: newSeconds });
@@ -120,7 +121,7 @@ const NoteEditor: React.FC<NoteEditorProps> = () => {
       ctx.strokeStyle = currentColor;
       ctx.lineWidth = brushSize;
     }
-    
+
     ctx.lineTo(x, y);
     ctx.stroke();
   };
@@ -305,7 +306,9 @@ const NoteEditor: React.FC<NoteEditorProps> = () => {
                   onClick={option.action}
                   className="flex items-center justify-center px-3 py-2 border border-[#7E90B0] rounded-full hover:bg-gray-50 transition-colors flex-1"
                 >
-                  <span className="text-[#7E90B0] text-base">{option.label}</span>
+                  <span className="text-[#7E90B0] text-base">
+                    {option.label}
+                  </span>
                 </button>
               ))}
             </div>
@@ -525,9 +528,7 @@ const NoteEditor: React.FC<NoteEditorProps> = () => {
             <h3 className="text-lg font-semibold text-[#3D526C] mb-2 text-center">
               内容已保存
             </h3>
-            <p className="text-[#909399] text-center">
-              笔记内容已成功保存
-            </p>
+            <p className="text-[#909399] text-center">笔记内容已成功保存</p>
           </div>
         </div>
       )}

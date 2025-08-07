@@ -46,7 +46,7 @@ export default function EditNoteEntry({
 
   useEffect(() => {
     if (!isOpen) return;
-    
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -134,7 +134,7 @@ export default function EditNoteEntry({
       ctx.strokeStyle = currentColor;
       ctx.lineWidth = brushSize;
     }
-    
+
     ctx.lineTo(x, y);
     ctx.stroke();
   };
@@ -166,14 +166,18 @@ export default function EditNoteEntry({
                     fill="#CB2F2F"
                   />
                 </svg>
-                <span className="text-[#CB2F2F] text-lg font-semibold">退出</span>
+                <span className="text-[#CB2F2F] text-lg font-semibold">
+                  退出
+                </span>
               </button>
             </div>
 
             <div className="w-0.5 h-6 bg-[#B6C2DA]"></div>
 
             <div className="flex items-center gap-2">
-              <h1 className="text-[#3D526C] text-2xl font-semibold">笔记详情</h1>
+              <h1 className="text-[#3D526C] text-2xl font-semibold">
+                笔记详情
+              </h1>
             </div>
           </div>
 
@@ -321,7 +325,9 @@ export default function EditNoteEntry({
                       onClick={option.action}
                       className="flex items-center justify-center px-3 py-2 border border-[#7E90B0] rounded-full hover:bg-gray-50 transition-colors flex-1"
                     >
-                      <span className="text-[#7E90B0] text-base">{option.label}</span>
+                      <span className="text-[#7E90B0] text-base">
+                        {option.label}
+                      </span>
                     </button>
                   ))}
                 </div>
@@ -408,7 +414,9 @@ export default function EditNoteEntry({
                 <div className="flex items-center gap-2">
                   {/* Brush Size Dropdown */}
                   <div className="flex items-center px-6 py-1.5 gap-2">
-                    <span className="text-[#3D526C] text-base">{brushSize} px</span>
+                    <span className="text-[#3D526C] text-base">
+                      {brushSize} px
+                    </span>
                     <svg
                       width="16"
                       height="16"
