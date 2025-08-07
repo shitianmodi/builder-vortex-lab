@@ -810,7 +810,9 @@ export default function DataCenter() {
                     fill="white"
                   />
                 </svg>
-                <div className="text-white text-lg font-semibold">删���记录</div>
+                <div className="text-white text-lg font-semibold">
+                  删���记录
+                </div>
               </button>
             </div>
           </div>
