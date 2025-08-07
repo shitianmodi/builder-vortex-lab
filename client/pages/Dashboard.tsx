@@ -61,7 +61,7 @@ export default function Dashboard() {
             className={`w-20 h-20 p-2 rounded-2xl flex flex-col items-center justify-center gap-1 cursor-pointer ${
               selectedNav === "data" ? "bg-blue-800" : ""
             }`}
-            onClick={() => setSelectedNav("data")}
+            onClick={() => navigate("/data-center")}
           >
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
               <path
