@@ -114,7 +114,7 @@ const mockTools: ToolItem[] = [
     id: '11',
     name: '沙具名称一行字',
     color: '#F55D5D',
-    colorName: '红色',
+    colorName: '���色',
     category: '类型名称',
     subCategory: '子类型名称',
     image: 'https://cdn.builder.io/api/v1/image/assets%2F633abf5e59cd4a2c979cb3a5ea2346f6%2F7fabbd312612410484e8edfa284b74c8?format=webp&width=800',
@@ -444,15 +444,28 @@ export default function ToolManagement() {
                       placeholder="输入名称"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="flex-1 text-[#7E90B0] text-base bg-transparent outline-none"
+                      className={`flex-1 text-base bg-transparent outline-none ${
+                        searchTerm ? 'text-[#324459]' : 'text-[#7E90B0]'
+                      }`}
                     />
                   </div>
-                  <button 
-                    onClick={handleSearch}
-                    className="flex h-9 px-4 py-2 justify-center items-center gap-2 rounded-2xl bg-[#004DA9] hover:bg-[#003d8c] transition-colors"
-                  >
-                    <div className="text-white text-lg font-semibold">搜索</div>
-                  </button>
+                  {searchTerm ? (
+                    <button
+                      onClick={() => setSearchTerm('')}
+                      className="flex w-[68px] h-9 px-4 py-2 justify-center items-center gap-2 rounded-2xl bg-[#004DA9] hover:bg-[#003d8c] transition-colors"
+                    >
+                      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 13.597L6.41065 19.1863C6.20152 19.3954 5.93536 19.5 5.61217 19.5C5.28897 19.5 5.02281 19.3954 4.81369 19.1863C4.60456 18.9772 4.5 18.711 4.5 18.3878C4.5 18.0646 4.60456 17.7985 4.81369 17.5894L10.403 12L4.81369 6.41065C4.60456 6.20152 4.5 5.93536 4.5 5.61217C4.5 5.28897 4.60456 5.02281 4.81369 4.81369C5.02281 4.60456 5.28897 4.5 5.61217 4.5C5.93536 4.5 6.20152 4.60456 6.41065 4.81369L12 10.403L17.5894 4.81369C17.7985 4.60456 18.0646 4.5 18.3878 4.5C18.711 4.5 18.9772 4.60456 19.1863 4.81369C19.3954 5.02281 19.5 5.28897 19.5 5.61217C19.5 5.93536 19.3954 6.20152 19.1863 6.41065L13.597 12L19.1863 17.5894C19.3954 17.7985 19.5 18.0646 19.5 18.3878C19.5 18.711 19.3954 18.9772 19.1863 19.1863C18.9772 19.3954 18.711 19.5 18.3878 19.5C18.0646 19.5 17.7985 19.3954 17.5894 19.1863L12 13.597Z" fill="white"/>
+                      </svg>
+                    </button>
+                  ) : (
+                    <button
+                      onClick={handleSearch}
+                      className="flex h-9 px-4 py-2 justify-center items-center gap-2 rounded-2xl bg-[#004DA9] hover:bg-[#003d8c] transition-colors"
+                    >
+                      <div className="text-white text-lg font-semibold">搜索</div>
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
