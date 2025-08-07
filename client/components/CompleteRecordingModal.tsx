@@ -4,6 +4,7 @@ interface CompleteRecordingModalProps {
   isOpen: boolean;
   onClose: () => void;
   onConfirm: (option: 'direct' | 'review' | 'save') => void;
+  mode?: 'video' | 'photo';
 }
 
 export default function CompleteRecordingModal({ isOpen, onClose, onConfirm }: CompleteRecordingModalProps) {
