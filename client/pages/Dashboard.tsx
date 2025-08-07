@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Dashboard() {
+  const navigate = useNavigate();
   const [selectedNav, setSelectedNav] = useState('home');
   const [videoOptions, setVideoOptions] = useState({
     content: 'sandbox', // 'sandbox' or 'both'
@@ -118,7 +119,7 @@ export default function Dashboard() {
                 {/* Recording Content */}
                 <div>
                   <label className="block text-base mb-4 text-gray-600">
-                    记录内��
+                    记录内容
                   </label>
                   <div className="space-y-4">
                     <div 
