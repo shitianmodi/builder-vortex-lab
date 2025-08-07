@@ -13,6 +13,7 @@ import StudentSelection from "./pages/StudentSelection";
 import VideoRecording from "./pages/VideoRecording";
 import PhotoCapture from "./pages/PhotoCapture";
 import NoteEditor from "./pages/NoteEditor";
+import VideoPlayback from "./pages/VideoPlayback";
 import LogViewer from "./pages/LogViewer";
 import NotFound from "./pages/NotFound";
 
