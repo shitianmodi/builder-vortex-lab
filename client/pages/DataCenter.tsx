@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DataCleanupWarning from '../components/DataCleanupWarning';
+import EmptyState from '../components/EmptyState';
 
 interface HistoryRecord {
   id: string;
