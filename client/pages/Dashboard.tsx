@@ -29,8 +29,8 @@ export default function Dashboard() {
         {/* Navigation Items */}
         <div className="flex flex-col gap-4 w-full">
           {/* Home */}
-          <div 
-            className={`w-21 h-21 p-2 rounded-2xl flex flex-col items-center justify-center gap-0.5 cursor-pointer ${
+          <div
+            className={`w-20 h-20 p-2 rounded-2xl flex flex-col items-center justify-center gap-1 cursor-pointer ${
               selectedNav === 'home' ? 'bg-blue-800' : ''
             }`}
             onClick={() => setSelectedNav('home')}
@@ -317,7 +317,7 @@ export default function Dashboard() {
             <div>
               <div className="flex justify-between items-center mb-6">
                 <h3 className="text-lg font-semibold" style={{ color: 'var(--text-b1)' }}>
-                  过��识别
+                  过往识别
                 </h3>
                 <div className="flex items-center gap-1 cursor-pointer">
                   <span className="text-base" style={{ color: 'var(--text-b2)' }}>查看全部</span>
