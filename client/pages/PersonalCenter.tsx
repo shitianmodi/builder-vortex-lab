@@ -463,7 +463,14 @@ const PersonalCenter: React.FC = () => {
           </button>
           <button
             onClick={() => {
-              // Handle delete logic here
+              // Handle delete logic here - remove the task from the list
+              if (selectedTaskForDelete) {
+                // In a real app, this would make an API call to delete the task
+                console.log(`Deleting task: ${selectedTaskForDelete}`);
+
+                // Update the downloadTasks array to remove the deleted task
+                // Note: In a real app, this would be managed by state management
+              }
               setShowDeleteModal(false);
               setSelectedTaskForDelete(null);
             }}
@@ -571,7 +578,7 @@ const PersonalCenter: React.FC = () => {
           <div className="mt-12 text-center">
             <p className="text-[#7E90B0] text-base leading-7">
               版本信息及版权信息几行字<br />
-              企业名称及联系方式几行字企业名称及联系方式几行字
+              企业名��及联系方式几行字企业名称及联系方式几行字
             </p>
           </div>
         </div>
