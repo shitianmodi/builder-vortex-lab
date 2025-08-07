@@ -103,7 +103,7 @@ const mockTools: ToolItem[] = [
   },
   {
     id: '10',
-    name: '沙具名称一行字',
+    name: '沙具名称一��字',
     color: '#F55D5D',
     colorName: '红色',
     category: '类型名称',
@@ -628,6 +628,130 @@ export default function ToolManagement() {
                 >
                   <span className="text-white text-lg font-semibold">取消</span>
                 </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Tool Detail Drawer */}
+        {showToolDetail && selectedTool && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
+            <div
+              className="absolute inset-0"
+              onClick={handleCloseToolDetail}
+            />
+            <div className="absolute right-0 top-0 w-[974px] h-full bg-[#EEF1FA] rounded-l-[36px] flex">
+              <div className="w-full h-full p-14 overflow-y-auto">
+                <div className="flex flex-col gap-8 max-w-[870px]">
+                  {/* Header Section */}
+                  <div className="flex justify-end items-start gap-9">
+                    {/* Tool Image */}
+                    <div className="flex items-center rounded-3xl bg-[#EEF1FA] relative">
+                      <img
+                        src={selectedTool.image}
+                        alt={selectedTool.name}
+                        className="w-[425px] h-[283px] object-cover rounded-3xl transform scale-[1.6] translate-x-[-30px]"
+                      />
+                    </div>
+
+                    {/* Tool Info */}
+                    <div className="flex flex-col gap-6 min-w-[400px]">
+                      {/* Title and Edit Button */}
+                      <div className="flex justify-between items-center">
+                        <h2 className="text-[#303133] text-2xl font-semibold">{selectedTool.name}</h2>
+                        <button className="flex h-12 px-4 py-2 justify-center items-center gap-2 rounded-2xl border border-[#004DA9] hover:bg-[#f0f4ff] transition-colors">
+                          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                            <path d="M5.55 20.25C5.055 20.25 4.6314 20.0741 4.2792 19.7224C3.927 19.3706 3.7506 18.9472 3.75 18.4522V5.86798C3.75 5.3736 3.9264 4.95052 4.2792 4.59876C4.632 4.247 5.0556 4.07082 5.55 4.07022H11.4225C11.7225 4.07022 11.9475 4.16401 12.0975 4.35157C12.2475 4.53914 12.3225 4.74498 12.3225 4.9691C12.3225 5.19322 12.2439 5.39936 12.0867 5.58753C11.9295 5.77569 11.7006 5.86918 11.4 5.86798H5.55V18.4522H18.15V12.5871C18.15 12.2875 18.2439 12.0627 18.4317 11.9129C18.6195 11.7631 18.8256 11.6882 19.05 11.6882C19.2744 11.6882 19.4808 11.7631 19.6692 11.9129C19.8576 12.0627 19.9512 12.2875 19.95 12.5871V18.4522C19.95 18.9466 19.7739 19.37 19.4217 19.7224C19.0695 20.0747 18.6456 20.2506 18.15 20.25H5.55ZM9.15 13.9579V11.7781C9.15 11.5384 9.195 11.3098 9.285 11.0922C9.375 10.8747 9.5025 10.6839 9.6675 10.5197L17.4075 2.78933C17.5875 2.60955 17.79 2.47472 18.015 2.38483C18.24 2.29494 18.465 2.25 18.69 2.25C18.93 2.25 19.1589 2.29494 19.3767 2.38483C19.5945 2.47472 19.7931 2.60955 19.9725 2.78933L21.2325 4.07022C21.3975 4.25 21.525 4.44865 21.615 4.66618C21.705 4.88371 21.75 5.10453 21.75 5.32865C21.75 5.55277 21.7089 5.77389 21.6267 5.99202C21.5445 6.21015 21.4131 6.4085 21.2325 6.58708L13.4925 14.3174C13.3275 14.4822 13.1364 14.6134 12.9192 14.7111C12.702 14.8088 12.4731 14.8573 12.2325 14.8567H10.05C9.795 14.8567 9.5814 14.7704 9.4092 14.5979C9.237 14.4253 9.1506 14.2119 9.15 13.9579ZM10.95 13.059H12.21L17.43 7.8455L16.8 7.21629L16.1475 6.58708L10.95 11.7781V13.059Z" fill="#004DA9"/>
+                          </svg>
+                          <span className="text-[#004DA9] text-lg font-semibold">编辑</span>
+                        </button>
+                      </div>
+
+                      {/* Separator */}
+                      <div className="w-full h-[1px] bg-[#E2E7F0]" />
+
+                      {/* Details */}
+                      <div className="flex flex-col gap-4">
+                        {/* Category */}
+                        <div className="flex h-7 items-center gap-6">
+                          <div className="w-16 text-[#7E90B0] text-base">分类</div>
+                          <div className="flex justify-end items-center gap-1">
+                            <span className="text-[#303133] text-base">{selectedTool.category}</span>
+                            <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
+                              <path fillRule="evenodd" clipRule="evenodd" d="M5.39857 2.39886C5.06662 2.73081 5.06662 3.269 5.39857 3.60094L9.79753 7.9999L5.39857 12.3989C5.06662 12.7308 5.06662 13.269 5.39857 13.6009C5.73051 13.9329 6.2687 13.9329 6.60065 13.6009L11.6007 8.60094C11.9326 8.269 11.9326 7.73081 11.6007 7.39886L6.60065 2.39886C6.2687 2.06692 5.73051 2.06692 5.39857 2.39886Z" fill="#303133"/>
+                            </svg>
+                            <span className="text-[#303133] text-base">{selectedTool.subCategory}</span>
+                          </div>
+                        </div>
+
+                        {/* Color */}
+                        <div className="flex w-56 h-7 items-center gap-6">
+                          <div className="w-16 text-[#7E90B0] text-base">颜色</div>
+                          <div className="flex w-14 items-center gap-2">
+                            <div
+                              className="w-2.5 h-2.5"
+                              style={{ backgroundColor: selectedTool.color }}
+                            />
+                            <span className="text-[#303133] text-base">{selectedTool.colorName}</span>
+                          </div>
+                        </div>
+
+                        {/* Update Time */}
+                        <div className="flex w-56 h-7 items-center gap-6">
+                          <div className="w-16 text-[#7E90B0] text-base">更新时间</div>
+                          <span className="text-[#303133] text-base">30天前</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Intent Section */}
+                  <div className="flex flex-col gap-4 h-[212px]">
+                    <div className="flex justify-center items-center gap-4 w-full">
+                      <div className="w-8 text-[#7E90B0] text-base">意向</div>
+                      <div className="flex-1 h-[1px] bg-[#E2E7F0]" />
+                    </div>
+                    <div className="text-[#303133] text-base leading-8">
+                      意向说明一段话，意向说明一段话意向说明一段话，意向说明一段话意向说明一段话。意向说明一段话意向说明一段话。意向说明一段话，意向说明一段话意向说明一段话，意向说明一段话意向说明一段话。意向说明一段话意向说明一段话。
+                      <br />
+                      意向说明一段话，意向说明一段话意向说明一段话，意向说明一段话意向说明一段话。意向说明一段话意向说明一���话意向说明一段话，意向说明一段话意向说明一段话，意向说明一段话意向说明一段话。意向说明一段话意向说明一段话。
+                    </div>
+                  </div>
+
+                  {/* Image Gallery Section */}
+                  <div className="flex flex-col gap-4">
+                    <div className="flex justify-center items-center gap-4 w-full">
+                      <div className="w-8 text-[#7E90B0] text-base">图册</div>
+                      <div className="flex-1 h-[1px] bg-[#E2E7F0]" />
+                    </div>
+
+                    {/* First Row - 6 Images */}
+                    <div className="flex h-[124px] items-center gap-6 w-full">
+                      {Array.from({ length: 6 }).map((_, index) => (
+                        <div key={index} className="flex-1 h-full rounded-2xl overflow-hidden">
+                          <img
+                            src={selectedTool.image}
+                            alt={`Gallery ${index + 1}`}
+                            className="w-full h-full object-cover transform scale-[2.2] translate-x-[-16px] translate-y-[-1px]"
+                          />
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Second Row - 2 Images */}
+                    <div className="flex w-[274px] h-[124px] items-center gap-6">
+                      {Array.from({ length: 2 }).map((_, index) => (
+                        <div key={index} className="flex-1 h-full rounded-2xl overflow-hidden">
+                          <img
+                            src={selectedTool.image}
+                            alt={`Gallery ${index + 7}`}
+                            className="w-full h-full object-cover transform scale-[2.2] translate-x-[-16px] translate-y-[-1px]"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
