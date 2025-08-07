@@ -11,7 +11,7 @@ const NoteEditor: React.FC<NoteEditorProps> = () => {
   const [brushSize, setBrushSize] = useState(10);
   const [tool, setTool] = useState<"pen" | "keyboard" | "eraser">("pen");
   const [textContent, setTextContent] =
-    useState(`输入的内容，输入的内容输入的内容输入的内容。输入的内容输入的内容，输入的内容输入的内容。输入的内容输入的内容输入的内容输入的内容，输入��内容输入的内容输入的内容，输入的内容输入的内容。
+    useState(`输入的内容，输入的内容输入的内容输入的内容。输入的内容输入的内容，输入的内容输入的内容。输入的内容输入的内容输入的内容输入的内容，输入的内容输入的内容输入的内容，输入的内容输入的内容。
 输入的内容，输入的内容输入的内容输入的内容。输入的内容输入的内容，输入的内容输入的内容。输入的内容输入的内容输入的内容输入的内容，输入的内容输入的内容输入的内容，输入的内容输入的内容。`);
   const [currentTime, setCurrentTime] = useState({ minutes: 0, seconds: 0 });
   const [showExitModal, setShowExitModal] = useState(false);
@@ -38,7 +38,8 @@ const NoteEditor: React.FC<NoteEditorProps> = () => {
     if (hasUnsavedChanges) {
       setShowExitModal(true);
     } else {
-      navigate("/photo-capture");
+      // Navigate back to previous page - could be photo-capture or video-recording
+      navigate(-1);
     }
   };
 
@@ -47,7 +48,8 @@ const NoteEditor: React.FC<NoteEditorProps> = () => {
     // Simulate save process
     setTimeout(() => {
       setShowSaveModal(false);
-      navigate("/photo-capture");
+      // Navigate back to previous page - could be photo-capture or video-recording
+      navigate(-1);
     }, 1500);
   };
 
