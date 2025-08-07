@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import DataCenter from "./pages/DataCenter";
 import RecordingReview from "./pages/RecordingReview";
+import LogView from "./pages/LogView";
 import InformedConsent from "./pages/InformedConsent";
 import StudentSelection from "./pages/StudentSelection";
 import VideoRecording from "./pages/VideoRecording";
