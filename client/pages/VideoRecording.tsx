@@ -63,19 +63,19 @@ export default function VideoRecording() {
     setLogsState((prev) => (prev === "expanded" ? "collapsed" : "expanded"));
   };
 
-  const handleCompleteRecording = (option: 'direct' | 'review' | 'save') => {
+  const handleCompleteRecording = (option: "direct" | "review" | "save") => {
     switch (option) {
-      case 'direct':
+      case "direct":
         // Direct report generation - navigate to data center
-        navigate('/dashboard');
+        navigate("/dashboard");
         break;
-      case 'review':
+      case "review":
         // Enter recording review - navigate to log viewer
-        navigate('/log-viewer');
+        navigate("/log-viewer");
         break;
-      case 'save':
+      case "save":
         // Save video temporarily - return to main page
-        navigate('/dashboard');
+        navigate("/dashboard");
         break;
     }
   };
@@ -156,7 +156,7 @@ export default function VideoRecording() {
         {/* Function Buttons */}
         <div className="flex items-center gap-4">
           <button
-            onClick={() => navigate('/log-viewer')}
+            onClick={() => navigate("/log-viewer")}
             className="flex h-12 px-4 py-2 justify-center items-center gap-2 rounded-2xl border border-[#004DA9] hover:bg-blue-50 transition-colors"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
