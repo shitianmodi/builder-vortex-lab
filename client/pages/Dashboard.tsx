@@ -229,9 +229,8 @@ export default function Dashboard() {
             </div>
 
             {/* Start Button */}
-            <button 
-              className="w-full py-3 mt-8 rounded-2xl text-white text-2xl font-semibold"
-              style={{ backgroundColor: 'var(--theme-blue-00)' }}
+            <button
+              className="w-full py-3 mt-8 rounded-2xl text-white text-2xl font-semibold bg-blue-700 hover:bg-blue-800"
             >
               开始
             </button>
