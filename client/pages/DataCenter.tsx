@@ -172,6 +172,23 @@ export default function DataCenter() {
     setSelectedRecords([]);
   };
 
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (timeDropdownRef.current && !timeDropdownRef.current.contains(event.target as Node)) {
+        setShowTimeDropdown(false);
+      }
+      if (sortDropdownRef.current && !sortDropdownRef.current.contains(event.target as Node)) {
+        setShowSortDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   // Filter the data based on selected filters
   const filteredData = mockData.filter(record => {
     // Format filter
@@ -579,7 +596,7 @@ export default function DataCenter() {
                 <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
                   <path d="M6.84375 21C6.27656 21 5.79119 20.8043 5.38763 20.413C4.98407 20.0217 4.78194 19.5507 4.78125 19V6C4.48907 6 4.24432 5.904 4.047 5.712C3.84969 5.52 3.75069 5.28267 3.75 5C3.74932 4.71733 3.84832 4.48 4.047 4.288C4.24569 4.096 4.49044 4 4.78125 4H8.90625C8.90625 3.71667 9.00525 3.47933 9.20325 3.288C9.40125 3.09667 9.646 3.00067 9.9375 3H14.0625C14.3547 3 14.5998 3.096 14.7978 3.288C14.9958 3.48 15.0944 3.71733 15.0937 4H19.2187C19.5109 4 19.756 4.096 19.954 4.288C20.152 4.48 20.2507 4.71733 20.25 5C20.2493 5.28267 20.1503 5.52033 19.953 5.713C19.7557 5.90567 19.5109 6.00133 19.2187 6V19C19.2187 19.55 19.017 20.021 18.6134 20.413C18.2098 20.805 17.7241 21.0007 17.1562 21H6.84375ZM17.1562 6H6.84375V19H17.1562V6ZM9.9375 17C10.2297 17 10.4748 16.904 10.6728 16.712C10.8708 16.52 10.9694 16.2827 10.9688 16V9C10.9688 8.71667 10.8698 8.47933 10.6718 8.288C10.4738 8.09667 10.229 8.00067 9.9375 8C9.646 7.99933 9.40125 8.09533 9.20325 8.288C9.00525 8.48067 8.90625 8.718 8.90625 9V16C8.90625 16.2833 9.00525 16.521 9.20325 16.713C9.40125 16.905 9.646 17.0007 9.9375 17ZM14.0625 17C14.3547 17 14.5998 16.904 14.7978 16.712C14.9958 16.52 15.0944 16.2827 15.0937 16V9C15.0937 8.71667 14.9947 8.47933 14.7967 8.288C14.5987 8.09667 14.354 8.00067 14.0625 8C13.771 7.99933 13.5262 8.09533 13.3282 8.288C13.1302 8.48067 13.0312 8.718 13.0312 9V16C13.0312 16.2833 13.1302 16.521 13.3282 16.713C13.5262 16.905 13.771 17.0007 14.0625 17Z" fill="white"/>
                 </svg>
-                <div className="text-white text-lg font-semibold">删除记录</div>
+                <div className="text-white text-lg font-semibold">删除���录</div>
               </button>
             </div>
           </div>
