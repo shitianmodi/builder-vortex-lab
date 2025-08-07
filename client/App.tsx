@@ -20,6 +20,7 @@ import PhotoCapture from "./pages/PhotoCapture";
 import NoteEditor from "./pages/NoteEditor";
 import VideoPlayback from "./pages/VideoPlayback";
 import LogViewer from "./pages/LogViewer";
+import ToolManagement from "./pages/ToolManagement";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
