@@ -117,6 +117,8 @@ export default function DataCenter() {
   const [selectedTime, setSelectedTime] = useState('2025年7月');
   const [sortBy, setSortBy] = useState('时间最近');
   const [selectedRecords, setSelectedRecords] = useState<string[]>([]);
+  const [showTimeDropdown, setShowTimeDropdown] = useState(false);
+  const [showSortDropdown, setShowSortDropdown] = useState(false);
 
   const formatOptions = [
     { key: 'all', label: '全部' },
