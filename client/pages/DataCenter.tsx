@@ -395,10 +395,17 @@ export default function DataCenter() {
             <h1 className="text-[#3D526C] text-[28px] font-semibold">数据中心</h1>
           </div>
           <div className="text-[#7E90B0] text-sm font-normal max-w-[270px]">
-            *沙盘过程视频仅临时��存72小时<br />
+            *沙盘过程视频仅临���存存72小时<br />
             如有需要可自行下载到本地
           </div>
         </div>
+
+        {/* Warning Message */}
+        {showWarning && (
+          <div className="mb-8">
+            <DataCleanupWarning onClose={() => setShowWarning(false)} />
+          </div>
+        )}
 
         {/* Search and Filters */}
         <div className="flex justify-between items-center mb-8">
