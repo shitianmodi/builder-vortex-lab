@@ -23,8 +23,8 @@ export default function CompleteRecordingModal({ isOpen, onClose, onConfirm, mod
         {/* Header */}
         <div className="flex justify-between items-center">
           <div className="flex flex-col gap-1">
-            <h2 className="text-[#3D526C] text-2xl font-semibold">完成拍摄</h2>
-            <p className="text-[#CB2F2F] text-base">完成后无法继续当前拍摄。</p>
+            <h2 className="text-[#3D526C] text-2xl font-semibold">完成{mode === 'photo' ? '拍摄' : '录像'}</h2>
+            <p className="text-[#CB2F2F] text-base">完成后无法继续当前{mode === 'photo' ? '拍摄' : '录像'}。</p>
           </div>
           <p className="text-[#A8ABB2] text-base">*生成报告可能需要3~5分钟</p>
         </div>
