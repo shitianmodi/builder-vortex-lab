@@ -12,8 +12,12 @@ export default function StudentSelection() {
     setHasSearched(true);
     // Simulate search - in real app, this would call an API
     if (searchQuery.trim()) {
-      // For demo, show no results to match the Figma design
-      setSearchResults([]);
+      // For demo, show some sample results if search term is "test" or "学生"
+      if (searchQuery.toLowerCase().includes('test') || searchQuery.includes('学生')) {
+        setSearchResults(['张三', '李四', '王五']);
+      } else {
+        setSearchResults([]);
+      }
     }
   };
 
