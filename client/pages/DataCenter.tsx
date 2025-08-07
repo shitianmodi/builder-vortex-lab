@@ -481,7 +481,7 @@ export default function DataCenter() {
             {/* Sort */}
             <div className="flex items-center gap-4 relative">
               <div className="text-[#324459] text-base font-normal">排序</div>
-              <div className="relative">
+              <div className="relative" ref={sortDropdownRef}>
                 <button
                   onClick={() => setShowSortDropdown(!showSortDropdown)}
                   className="flex w-[150px] px-4 py-1 justify-between items-center rounded-2xl border border-[#B6C2DA] hover:border-[#004DA9] transition-colors"
