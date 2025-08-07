@@ -55,7 +55,7 @@ const PersonalCenter: React.FC = () => {
     { name: '报告文件', size: '56MB', checked: false }
   ]);
 
-  const downloadTasks: DownloadTask[] = [
+  const [downloadTasks, setDownloadTasks] = useState<DownloadTask[]>([
     {
       id: '1',
       name: '文件名称一行字',
@@ -115,7 +115,7 @@ const PersonalCenter: React.FC = () => {
       size: '15MB',
       completed: true
     }
-  ];
+  ]);
 
   const getFileIcon = (type: string) => {
     switch (type) {
@@ -465,11 +465,9 @@ const PersonalCenter: React.FC = () => {
             onClick={() => {
               // Handle delete logic here - remove the task from the list
               if (selectedTaskForDelete) {
-                // In a real app, this would make an API call to delete the task
-                console.log(`Deleting task: ${selectedTaskForDelete}`);
-
-                // Update the downloadTasks array to remove the deleted task
-                // Note: In a real app, this would be managed by state management
+                // Remove the task from the downloadTasks array
+                setDownloadTasks(prev => prev.filter(task => task.id !== selectedTaskForDelete));
+                console.log(`Deleted task: ${selectedTaskForDelete}`);
               }
               setShowDeleteModal(false);
               setSelectedTaskForDelete(null);
