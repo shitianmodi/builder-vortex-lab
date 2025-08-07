@@ -104,6 +104,33 @@ export default function LogViewer() {
     setShowSaveModal(true);
   };
 
+  const handleExit = () => {
+    setShowExitModal(true);
+  };
+
+  const handleExitConfirm = () => {
+    setShowExitModal(false);
+    navigate('/dashboard');
+  };
+
+  const handleGenerateReport = () => {
+    setShowGenerateReportModal(true);
+  };
+
+  const handleGenerateReportConfirm = () => {
+    setShowGenerateReportModal(false);
+    navigate('/dashboard');
+  };
+
+  const handleDownloadLog = () => {
+    // Handle log download
+    console.log('Downloading log...');
+  };
+
+  const handleViewVideo = () => {
+    navigate('/video-playback');
+  };
+
   const handleConfirmDelete = () => {
     console.log('Deleting log:', showDeleteModal);
     setShowDeleteModal(null);
