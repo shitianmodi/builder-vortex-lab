@@ -50,6 +50,7 @@ const App = () => (
           <Route path="/log-viewer" element={<LogViewer />} />
           <Route path="/tool-management" element={<ToolManagement />} />
           <Route path="/edit-tool/:id" element={<EditTool />} />
+        <Route path="/personal-center" element={<PersonalCenter />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
