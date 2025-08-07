@@ -181,6 +181,9 @@ export default function ToolManagement() {
   const [activeCategory, setActiveCategory] = useState('类型名称');
   const [activeColor, setActiveColor] = useState('红色');
   const [activeAlphabet, setActiveAlphabet] = useState('A');
+  const [showMoveModal, setShowMoveModal] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('类型名称');
+  const [selectedSubCategory, setSelectedSubCategory] = useState('子类型名称');
 
   const toggleSelectAll = () => {
     setSelectAll(!selectAll);
