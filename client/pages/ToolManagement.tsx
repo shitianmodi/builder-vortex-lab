@@ -52,7 +52,7 @@ const mockTools: ToolItem[] = [
     name: '沙具名称一行字',
     color: '#F55D5D',
     colorName: '红色',
-    category: '类型名��',
+    category: '类型名称',
     subCategory: '子类型名称',
     image: 'https://cdn.builder.io/api/v1/image/assets%2F633abf5e59cd4a2c979cb3a5ea2346f6%2F06b4710a09b04a72b9bbf1460daf50dc?format=webp&width=800',
   },
@@ -89,7 +89,7 @@ const mockTools: ToolItem[] = [
     color: '#F55D5D',
     colorName: '红色',
     category: '类型名称',
-    subCategory: '子类型��称',
+    subCategory: '子类型名称',
     image: 'https://cdn.builder.io/api/v1/image/assets%2F633abf5e59cd4a2c979cb3a5ea2346f6%2F06b4710a09b04a72b9bbf1460daf50dc?format=webp&width=800',
   },
   {
@@ -401,13 +401,38 @@ export default function ToolManagement() {
                 </div>
 
                 {/* Sort Dropdown */}
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 relative">
                   <div className="text-[#324459] text-base">排序</div>
-                  <div className="flex w-[150px] px-4 py-1 justify-between items-center rounded-2xl border border-[#B6C2DA]">
-                    <div className="text-[#3D526C] text-base">{sortBy}</div>
-                    <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
-                      <path fillRule="evenodd" clipRule="evenodd" d="M13.6007 4.89906C13.2687 4.56711 12.7305 4.56711 12.3986 4.89906L7.99961 9.29802L3.60065 4.89906C3.2687 4.56711 2.73051 4.56711 2.39857 4.89906C2.06662 5.231 2.06662 5.76919 2.39857 6.10114L7.39857 11.1011C7.73051 11.4331 8.2687 11.4331 8.60065 11.1011L13.6007 6.10114C13.9326 5.76919 13.9326 5.231 13.6007 4.89906Z" fill="#3D526C"/>
-                    </svg>
+                  <div className="relative">
+                    <button
+                      onClick={() => setShowSortDropdown(!showSortDropdown)}
+                      className="flex w-[150px] px-4 py-1 justify-between items-center rounded-2xl border border-[#B6C2DA] hover:bg-gray-50 transition-colors"
+                    >
+                      <div className="text-[#3D526C] text-base">{sortBy}</div>
+                      <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
+                        <path fillRule="evenodd" clipRule="evenodd" d="M13.6007 4.89906C13.2687 4.56711 12.7305 4.56711 12.3986 4.89906L7.99961 9.29802L3.60065 4.89906C3.2687 4.56711 2.73051 4.56711 2.39857 4.89906C2.06662 5.231 2.06662 5.76919 2.39857 6.10114L7.39857 11.1011C7.73051 11.4331 8.2687 11.4331 8.60065 11.1011L13.6007 6.10114C13.9326 5.76919 13.9326 5.231 13.6007 4.89906Z" fill="#3D526C"/>
+                      </svg>
+                    </button>
+
+                    {/* Dropdown Options */}
+                    {showSortDropdown && (
+                      <div className="absolute top-10 left-0 w-[150px] bg-white rounded-2xl shadow-[0_0_10px_3px_rgba(126,144,176,0.2)] p-2 z-10">
+                        {sortOptions.map((option) => (
+                          <button
+                            key={option}
+                            onClick={() => {
+                              setSortBy(option);
+                              setShowSortDropdown(false);
+                            }}
+                            className={`w-full flex px-2 py-1 justify-center items-center rounded-2xl hover:bg-gray-50 transition-colors ${
+                              option === sortBy ? 'bg-[#F4F4F5]' : ''
+                            }`}
+                          >
+                            <span className="text-[#3D526C] text-base">{option}</span>
+                          </button>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
 
