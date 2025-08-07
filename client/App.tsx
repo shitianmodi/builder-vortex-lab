@@ -11,6 +11,8 @@ import Dashboard from "./pages/Dashboard";
 import InformedConsent from "./pages/InformedConsent";
 import StudentSelection from "./pages/StudentSelection";
 import VideoRecording from "./pages/VideoRecording";
+import PhotoCapture from "./pages/PhotoCapture";
+import NoteEditor from "./pages/NoteEditor";
 import LogViewer from "./pages/LogViewer";
 import NotFound from "./pages/NotFound";
 
