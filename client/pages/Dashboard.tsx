@@ -91,7 +91,7 @@ export default function Dashboard() {
 
         {/* User Avatar */}
         <button
-          onClick={() => navigate('/personal-center')}
+          onClick={() => navigate("/personal-center")}
           className="hover:opacity-80 transition-opacity"
         >
           <img

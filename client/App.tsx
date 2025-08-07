@@ -38,7 +38,10 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/data-center" element={<DataCenter />} />
           <Route path="/recording-review" element={<RecordingReview />} />
-          <Route path="/recording-inspection" element={<RecordingInspection />} />
+          <Route
+            path="/recording-inspection"
+            element={<RecordingInspection />}
+          />
           <Route path="/report-detail" element={<ReportDetail />} />
           <Route path="/log-view" element={<LogView />} />
           <Route path="/informed-consent" element={<InformedConsent />} />
@@ -50,7 +53,7 @@ const App = () => (
           <Route path="/log-viewer" element={<LogViewer />} />
           <Route path="/tool-management" element={<ToolManagement />} />
           <Route path="/edit-tool/:id" element={<EditTool />} />
-        <Route path="/personal-center" element={<PersonalCenter />} />
+          <Route path="/personal-center" element={<PersonalCenter />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
