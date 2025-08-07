@@ -31,7 +31,7 @@ const mockTools: ToolItem[] = [
   },
   {
     id: '2',
-    name: '沙具名称一行字',
+    name: '沙具���称一行字',
     color: '#F55D5D',
     colorName: '红色',
     category: '类型名称',
@@ -487,6 +487,23 @@ export default function ToolManagement() {
             ))}
           </div>
         </div>
+
+        {/* Bottom Action Bar */}
+        {selectedItems.length > 0 && (
+          <div className="fixed bottom-8 left-[204px] w-[1204px] h-[72px] flex px-6 py-3 justify-between items-center rounded-3xl bg-white shadow-[0_0_20px_7px_rgba(126,144,176,0.2)]">
+            <div className="text-base">
+              <span className="text-[#303133]">已选择 </span>
+              <span className="text-[#CB2F2F] font-bold">{selectedItems.length}</span>
+              <span className="text-[#303133]"> 个沙具</span>
+            </div>
+            <button className="flex h-12 px-4 py-2 justify-center items-center gap-2 rounded-2xl bg-[#004DA9] hover:bg-[#003d8c] transition-colors">
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+                <path fillRule="evenodd" clipRule="evenodd" d="M11.4972 4.08329C11.0676 4.52768 11.0676 5.24818 11.4972 5.69257L16.4944 10.8621H4.85C4.24249 10.8621 3.75 11.3715 3.75 12C3.75 12.6285 4.24249 13.1379 4.85 13.1379H16.4944L11.4972 18.3074C11.0676 18.7518 11.0676 19.4723 11.4972 19.9167C11.9268 20.3611 12.6232 20.3611 13.0528 19.9167L19.9278 12.8046C20.3574 12.3602 20.3574 11.6398 19.9278 11.1954L13.0528 4.08329C12.6232 3.6389 11.9268 3.6389 11.4972 4.08329Z" fill="white"/>
+              </svg>
+              <div className="text-white text-lg font-semibold">移动到分类</div>
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
