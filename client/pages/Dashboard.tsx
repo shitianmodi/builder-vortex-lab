@@ -358,10 +358,10 @@ export default function Dashboard() {
                 </div>
               </div>
 
-              {/* Disabled Start Button */}
+              {/* Start Button */}
               <button
-                className="w-full py-3 rounded-2xl text-white text-lg font-semibold bg-gray-400 cursor-not-allowed"
-                disabled
+                onClick={handleStartPhotoRecognition}
+                className="w-full py-3 rounded-2xl text-white text-lg font-semibold bg-blue-700 hover:bg-blue-800"
               >
                 开始
               </button>
