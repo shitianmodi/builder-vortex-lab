@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 type AppState = 'binding' | 'success' | 'failure' | 'login';
 
@@ -281,7 +282,7 @@ export default function Index() {
       {/* Footer */}
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
         <span className="text-base" style={{ color: 'var(--text-b3)' }}>
-          忘记密码���联系学校设备管理员
+          忘记密码请联系学校设备管理员
         </span>
         
         <button 
