@@ -41,7 +41,7 @@ const mockLogData: LogEntry[] = [
     id: '5',
     time: '00:00',
     type: '笔记',
-    description: '笔记内容文本，笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本',
+    description: '笔记内容文本，笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容��本笔记内容文本笔记内容文本笔记内容文本笔记内容文本',
     noteContent: {
       thumbnails: ['thumbnail1', 'thumbnail2'],
       text: '笔记内容文本，笔记内容文本笔记内容文本笔记内��文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本'
@@ -57,6 +57,7 @@ export default function LogView() {
     语音: true,
     笔记: false
   });
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
 
   const handleFilterToggle = (filter: keyof typeof selectedFilters) => {
     setSelectedFilters(prev => ({
