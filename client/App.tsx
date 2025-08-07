@@ -33,6 +33,7 @@ const App = () => (
           <Route path="/video-recording" element={<VideoRecording />} />
           <Route path="/photo-capture" element={<PhotoCapture />} />
           <Route path="/note-editor" element={<NoteEditor />} />
+          <Route path="/video-playback" element={<VideoPlayback />} />
           <Route path="/log-viewer" element={<LogViewer />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
