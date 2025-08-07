@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 type AppState = 'binding' | 'success' | 'failure' | 'login';
 
 export default function Index() {
+  const navigate = useNavigate();
   const [currentState, setCurrentState] = useState<AppState>('binding');
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
