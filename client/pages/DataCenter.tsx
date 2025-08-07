@@ -417,6 +417,30 @@ export default function DataCenter() {
             *沙盘过程视频仅临���存存72小时<br />
             如有需要可自行下载到本地
           </div>
+          {/* Test buttons for empty states */}
+          <div className="flex gap-2 ml-auto">
+            <button
+              onClick={() => setHasNetworkError(true)}
+              className="px-3 py-1 text-xs bg-red-100 text-red-600 rounded hover:bg-red-200"
+            >
+              模拟网络错误
+            </button>
+            <button
+              onClick={() => setHasData(false)}
+              className="px-3 py-1 text-xs bg-yellow-100 text-yellow-600 rounded hover:bg-yellow-200"
+            >
+              模拟无数据
+            </button>
+            <button
+              onClick={() => {
+                setHasNetworkError(false);
+                setHasData(true);
+              }}
+              className="px-3 py-1 text-xs bg-green-100 text-green-600 rounded hover:bg-green-200"
+            >
+              恢复正常
+            </button>
+          </div>
         </div>
 
         {/* Warning Message */}
@@ -556,7 +580,7 @@ export default function DataCenter() {
               />
             </div>
             <button className="flex h-9 px-4 py-2 justify-center items-center gap-2 rounded-2xl bg-[#004DA9]">
-              <div className="text-white text-lg font-semibold">搜索</div>
+              <div className="text-white text-lg font-semibold">���索</div>
             </button>
             <button
               onClick={() => navigate('/recording-review')}
