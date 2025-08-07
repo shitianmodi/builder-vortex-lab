@@ -120,6 +120,7 @@ export default function DataCenter() {
   const [selectedRecords, setSelectedRecords] = useState<string[]>([]);
   const [showTimeDropdown, setShowTimeDropdown] = useState(false);
   const [showSortDropdown, setShowSortDropdown] = useState(false);
+  const [showWarning, setShowWarning] = useState(true);
 
   const timeDropdownRef = useRef<HTMLDivElement>(null);
   const sortDropdownRef = useRef<HTMLDivElement>(null);
