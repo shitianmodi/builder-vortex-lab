@@ -22,7 +22,7 @@ export default function VideoRecording() {
   const logs: LogEntry[] = [
     { timestamp: "00:00", message: "在左上位置朝向右上放置了红色小汽车" },
     { timestamp: "01:00", message: "在左上位置加入水" },
-    { timestamp: "02:00", message: "来访者与咨询师发��对话" },
+    { timestamp: "02:00", message: "来访者与咨询师发生对话" },
     { timestamp: "03:00", message: "来访者自言自语" },
     { timestamp: "04:00", message: "咨询师插入笔记" },
   ];
@@ -351,6 +351,13 @@ export default function VideoRecording() {
           </div>
         </div>
       )}
+
+      {/* Complete Recording Modal */}
+      <CompleteRecordingModal
+        isOpen={showCompleteModal}
+        onClose={() => setShowCompleteModal(false)}
+        onConfirm={handleCompleteRecording}
+      />
     </div>
   );
 }
