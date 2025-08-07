@@ -114,7 +114,7 @@ export default function DataCenter() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFormat, setSelectedFormat] = useState<'video' | 'photo' | 'all'>('all');
   const [selectedStatus, setSelectedStatus] = useState<'pending' | 'generating' | 'completed' | 'all'>('all');
-  const [selectedTime, setSelectedTime] = useState('2025年7月');
+  const [selectedTime, setSelectedTime] = useState('2025��7月');
   const [sortBy, setSortBy] = useState('时间最近');
   const [selectedRecords, setSelectedRecords] = useState<string[]>([]);
   const [showTimeDropdown, setShowTimeDropdown] = useState(false);
@@ -131,6 +131,20 @@ export default function DataCenter() {
     { key: 'pending', label: '未生成' },
     { key: 'generating', label: '生成中' },
     { key: 'completed', label: '已完成' }
+  ];
+
+  const timeOptions = [
+    '2025年7月',
+    '2025年6月',
+    '2025年5月',
+    '2025年4月'
+  ];
+
+  const sortOptions = [
+    '时间最近',
+    '时间最远',
+    '姓名A-Z',
+    '姓名Z-A'
   ];
 
   const alphabetLetters = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
