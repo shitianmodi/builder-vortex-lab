@@ -90,11 +90,16 @@ export default function Dashboard() {
         </div>
 
         {/* User Avatar */}
-        <img
-          src="https://api.builder.io/api/v1/image/assets/TEMP/05114ceccd61297e06295e70e07c8025accaf9fa?width=128"
-          alt="User avatar"
-          className="w-16 h-16 rounded-full"
-        />
+        <button
+          onClick={() => navigate('/personal-center')}
+          className="hover:opacity-80 transition-opacity"
+        >
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/05114ceccd61297e06295e70e07c8025accaf9fa?width=128"
+            alt="User avatar"
+            className="w-16 h-16 rounded-full cursor-pointer"
+          />
+        </button>
       </div>
 
       {/* Main Content */}
