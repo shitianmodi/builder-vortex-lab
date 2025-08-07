@@ -61,7 +61,7 @@ const NoteEditor: React.FC<NoteEditorProps> = () => {
   };
 
   const quickInputOptions = [
-    { label: "上一个沙具", action: () => console.log("Previous toy") },
+    { label: "���一个沙具", action: () => console.log("Previous toy") },
     { label: "上一次语音", action: () => console.log("Previous voice") },
   ];
 
@@ -494,7 +494,7 @@ const NoteEditor: React.FC<NoteEditorProps> = () => {
               <button
                 onClick={() => {
                   setShowExitModal(false);
-                  navigate("/photo-capture");
+                  navigate(-1);
                 }}
                 className="px-4 py-2 bg-[#CB2F2F] text-white rounded-lg hover:bg-red-600 transition-colors"
               >
