@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import EditWaterEntry from '../components/EditWaterEntry';
 import EditVoiceEntry from '../components/EditVoiceEntry';
+import EditNoteEntry from '../components/EditNoteEntry';
 import ConfirmationModals from '../components/ConfirmationModals';
 
 type FilterType = 'all' | '沙具' | '水' | '语音' | '笔记';
@@ -187,7 +188,7 @@ export default function LogViewer() {
                               className="flex w-16 h-16 justify-center items-center rounded-2xl bg-[#B6C2DA]"
                             >
                               <span className="text-[#3D526C] text-sm leading-3.5 text-center">
-                                手写内容<br/>缩略图
+                                手写内容<br/>缩略��
                               </span>
                             </div>
                           ))}
@@ -283,6 +284,19 @@ export default function LogViewer() {
             startTime: { minutes: 0, seconds: 0 },
             endTime: { minutes: 0, seconds: 0 },
             transcription: editingLog.description
+          }}
+        />
+      )}
+
+      {editingLog && editingLog.type === '笔记' && (
+        <EditNoteEntry
+          isOpen={true}
+          onClose={() => setEditingLog(null)}
+          onSave={handleSaveEdit}
+          initialData={{
+            time: { minutes: 0, seconds: 0 },
+            content: editingLog.description,
+            thumbnails: editingLog.noteThumbnails || []
           }}
         />
       )}
