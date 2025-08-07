@@ -535,13 +535,19 @@ const PersonalCenter: React.FC = () => {
 
           {/* System Menu */}
           <div className="flex flex-col">
-            <div className="flex justify-between items-center py-4 border-b border-[#B6C2DA] cursor-pointer hover:bg-white/50 rounded transition-colors">
+            <div
+              onClick={() => setShowNotificationModal(true)}
+              className="flex justify-between items-center py-4 border-b border-[#B6C2DA] cursor-pointer hover:bg-white/50 rounded transition-colors"
+            >
               <span className="text-[#324459] text-lg">消息通知</span>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path fillRule="evenodd" clipRule="evenodd" d="M11.4972 4.08329C11.0676 4.52768 11.0676 5.24818 11.4972 5.69257L16.4944 10.8621H4.85C4.24249 10.8621 3.75 11.3715 3.75 12C3.75 12.6285 4.24249 13.1379 4.85 13.1379H16.4944L11.4972 18.3074C11.0676 18.7518 11.0676 19.4723 11.4972 19.9167C11.9268 20.3611 12.6232 20.3611 13.0528 19.9167L19.9278 12.8046C20.3574 12.3602 20.3574 11.6398 19.9278 11.1954L13.0528 4.08329C12.6232 3.6389 11.9268 3.6389 11.4972 4.08329Z" fill="#3D526C"/>
               </svg>
             </div>
-            <div className="flex justify-between items-center py-4 border-b border-[#B6C2DA] cursor-pointer hover:bg-white/50 rounded transition-colors">
+            <div
+              onClick={() => setShowLocalDataModal(true)}
+              className="flex justify-between items-center py-4 border-b border-[#B6C2DA] cursor-pointer hover:bg-white/50 rounded transition-colors"
+            >
               <span className="text-[#324459] text-lg">本地数据</span>
               <div className="flex items-center gap-2">
                 <span className="text-[#7E90B0] text-base">3096MB</span>
@@ -550,7 +556,10 @@ const PersonalCenter: React.FC = () => {
                 </svg>
               </div>
             </div>
-            <div className="flex justify-between items-center py-4 border-b border-[#B6C2DA] cursor-pointer hover:bg-white/50 rounded transition-colors">
+            <div
+              onClick={() => setShowFeedbackModal(true)}
+              className="flex justify-between items-center py-4 border-b border-[#B6C2DA] cursor-pointer hover:bg-white/50 rounded transition-colors"
+            >
               <span className="text-[#324459] text-lg">反馈和建议</span>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path fillRule="evenodd" clipRule="evenodd" d="M11.4972 4.08329C11.0676 4.52768 11.0676 5.24818 11.4972 5.69257L16.4944 10.8621H4.85C4.24249 10.8621 3.75 11.3715 3.75 12C3.75 12.6285 4.24249 13.1379 4.85 13.1379H16.4944L11.4972 18.3074C11.0676 18.7518 11.0676 19.4723 11.4972 19.9167C11.9268 20.3611 12.6232 20.3611 13.0528 19.9167L19.9278 12.8046C20.3574 12.3602 20.3574 11.6398 19.9278 11.1954L13.0528 4.08329C12.6232 3.6389 11.9268 3.6389 11.4972 4.08329Z" fill="#3D526C"/>
@@ -561,7 +570,7 @@ const PersonalCenter: React.FC = () => {
           {/* Footer Text */}
           <div className="mt-12 text-center">
             <p className="text-[#7E90B0] text-base leading-7">
-              版本信息及版权信息几行字<br />
+              版本信息及版���信息几行字<br />
               企业名称及联系方式几行字企业名称及联系方式几行字
             </p>
           </div>
@@ -681,7 +690,7 @@ const PersonalCenter: React.FC = () => {
               {/* Completed */}
               <div>
                 <div className="flex items-center h-3 px-1 mb-4">
-                  <span className="text-[#7E90B0] text-sm">下载完成���25）</span>
+                  <span className="text-[#7E90B0] text-sm">下载完成（25）</span>
                   <div className="flex-1 h-px bg-[#E2E7F0] ml-2"></div>
                 </div>
                 <div className="space-y-0">
