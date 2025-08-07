@@ -21,11 +21,10 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen w-full" style={{ backgroundColor: 'var(--bg-b1)' }}>
+    <div className="min-h-screen w-full bg-gray-100">
       {/* Navigation Sidebar */}
-      <div 
-        className="fixed left-14 top-14 w-29 h-212 rounded-3xl flex flex-col justify-between items-center py-4 px-4 pb-6"
-        style={{ backgroundColor: 'var(--theme-blue-00)' }}
+      <div
+        className="fixed left-14 top-14 w-32 h-96 bg-blue-700 rounded-3xl flex flex-col justify-between items-center py-4 px-4 pb-6"
       >
         {/* Navigation Items */}
         <div className="flex flex-col gap-4 w-full">
@@ -318,7 +317,7 @@ export default function Dashboard() {
             <div>
               <div className="flex justify-between items-center mb-6">
                 <h3 className="text-lg font-semibold" style={{ color: 'var(--text-b1)' }}>
-                  过往识别
+                  过��识别
                 </h3>
                 <div className="flex items-center gap-1 cursor-pointer">
                   <span className="text-base" style={{ color: 'var(--text-b2)' }}>查看全部</span>
