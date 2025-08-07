@@ -376,7 +376,10 @@ export default function Dashboard() {
                 >
                   过往识别
                 </h3>
-                <div className="flex items-center gap-1 cursor-pointer">
+                <div
+                  className="flex items-center gap-1 cursor-pointer"
+                  onClick={() => navigate("/data-center")}
+                >
                   <span
                     className="text-base"
                     style={{ color: "var(--text-b2)" }}
