@@ -138,7 +138,7 @@ export default function DataCenter() {
   const statusOptions = [
     { key: 'all', label: '全部' },
     { key: 'pending', label: '未生成' },
-    { key: 'generating', label: '生成中' },
+    { key: 'generating', label: '生��中' },
     { key: 'completed', label: '已完成' }
   ];
 
@@ -439,6 +439,12 @@ export default function DataCenter() {
               className="px-3 py-1 text-xs bg-green-100 text-green-600 rounded hover:bg-green-200"
             >
               恢复正常
+            </button>
+            <button
+              onClick={() => navigate('/report-detail')}
+              className="px-3 py-1 text-xs bg-blue-100 text-blue-600 rounded hover:bg-blue-200"
+            >
+              查看报告
             </button>
           </div>
         </div>
