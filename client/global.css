@@ -54,6 +54,19 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom colors for psychology sandbox app */
+    --text-w1: #FFF;
+    --bg-b3: #A8BDE8;
+    --theme-blue-1: #024089;
+    --bg-w1: #FFF;
+    --text-b2: #3D526C;
+    --text-g2: #606266;
+    --bg-w2: #F4F4F5;
+    --text-g4: #A8ABB2;
+    --frame-b1: #E2E7F0;
+    --text-b3: #7E90B0;
+    --theme-blue-00: #004DA9;
   }
 
   .dark {
