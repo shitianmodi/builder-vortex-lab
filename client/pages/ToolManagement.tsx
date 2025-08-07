@@ -485,7 +485,11 @@ export default function ToolManagement() {
             {/* Tools Grid */}
             <div className="grid grid-cols-2 gap-4 max-h-[600px] overflow-y-auto">
               {mockTools.map((tool) => (
-                <div key={tool.id} className="flex w-full p-5 px-6 justify-center items-center gap-4 rounded-3xl bg-white">
+                <div
+                  key={tool.id}
+                  className="flex w-full p-5 px-6 justify-center items-center gap-4 rounded-3xl bg-white cursor-pointer hover:shadow-md transition-shadow"
+                  onClick={() => handleToolClick(tool)}
+                >
                   {/* Tool Image */}
                   <div className="w-16 h-16 rounded-lg bg-[#F4F4F5] relative overflow-hidden">
                     <img 
