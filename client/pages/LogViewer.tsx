@@ -52,13 +52,20 @@ export default function LogViewer() {
       id: '5',
       time: '00:00',
       type: '笔记',
-      description: '笔记内容文本，笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容���本笔记内容文本笔记内容文本',
+      description: '笔记内容文本，笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本',
       noteThumbnails: ['thumbnail1', 'thumbnail2']
     }
   ];
 
   const handleClose = () => {
-    navigate('/video-recording');
+    // In a real app, check if there are unsaved changes
+    const hasUnsavedChanges = false; // This would be determined by checking edit state
+
+    if (hasUnsavedChanges) {
+      setShowUnsavedModal(true);
+    } else {
+      navigate('/video-recording');
+    }
   };
 
   const toggleFilter = (filter: FilterType) => {
