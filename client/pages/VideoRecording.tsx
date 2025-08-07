@@ -16,6 +16,7 @@ export default function VideoRecording() {
     useState<RecordingState>("recording");
   const [logsState, setLogsState] = useState<LogsState>("expanded");
   const [showExitDialog, setShowExitDialog] = useState(false);
+  const [showCompleteModal, setShowCompleteModal] = useState(false);
   const [recordingTime, setRecordingTime] = useState(0);
 
   const logs: LogEntry[] = [
