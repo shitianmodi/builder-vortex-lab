@@ -405,11 +405,16 @@ export default function DataCenter() {
           </div>
         </div>
 
-        <img 
-          src="https://api.builder.io/api/v1/image/assets/TEMP/05114ceccd61297e06295e70e07c8025accaf9fa?width=128" 
-          alt="用户头像" 
-          className="w-16 h-16 rounded-full"
-        />
+        <button
+          onClick={() => navigate('/personal-center')}
+          className="hover:opacity-80 transition-opacity"
+        >
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/05114ceccd61297e06295e70e07c8025accaf9fa?width=128"
+            alt="用户头像"
+            className="w-16 h-16 rounded-full cursor-pointer"
+          />
+        </button>
       </div>
 
       {/* Main Content */}
@@ -421,7 +426,7 @@ export default function DataCenter() {
           </div>
           <div className="text-[#7E90B0] text-sm font-normal max-w-[270px]">
             *沙盘过程视频仅临���存存72小时<br />
-            如有需要可自行下载到本地
+            如有需要可���行下载到本地
           </div>
           {/* Test buttons for empty states */}
           <div className="flex gap-2 ml-auto">
