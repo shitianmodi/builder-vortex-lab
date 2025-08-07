@@ -50,7 +50,7 @@ const PersonalCenter: React.FC = () => {
 
   const [localDataItems, setLocalDataItems] = useState<LocalDataItem[]>([
     { name: '系统缓存', size: '56MB', checked: false },
-    { name: '沙盘日志图文', size: '30MB', checked: true },
+    { name: '沙���日志图文', size: '30MB', checked: true },
     { name: '沙盘录像视频', size: '3096MB', checked: false, warning: '*已到期的云存档视频无法恢复。' },
     { name: '报告文件', size: '56MB', checked: false }
   ]);
@@ -774,6 +774,13 @@ const PersonalCenter: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Modals */}
+      {showLogoutModal && <LogoutModal />}
+      {showNotificationModal && <NotificationModal />}
+      {showLocalDataModal && <LocalDataModal />}
+      {showFeedbackModal && <FeedbackModal />}
+      {showDeleteModal && <DeleteModal />}
     </div>
   );
 };
