@@ -114,7 +114,7 @@ const mockTools: ToolItem[] = [
     id: '11',
     name: '沙具名称一行字',
     color: '#F55D5D',
-    colorName: '���色',
+    colorName: '红色',
     category: '类型名称',
     subCategory: '子类型名称',
     image: 'https://cdn.builder.io/api/v1/image/assets%2F633abf5e59cd4a2c979cb3a5ea2346f6%2F7fabbd312612410484e8edfa284b74c8?format=webp&width=800',
@@ -187,6 +187,8 @@ export default function ToolManagement() {
   const [showSortDropdown, setShowSortDropdown] = useState(false);
 
   const sortOptions = ['名称A-Z', '名称Z-A'];
+  const [showToolDetail, setShowToolDetail] = useState(false);
+  const [selectedTool, setSelectedTool] = useState<ToolItem | null>(null);
 
   const toggleSelectAll = () => {
     setSelectAll(!selectAll);
