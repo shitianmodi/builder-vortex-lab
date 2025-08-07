@@ -25,6 +25,8 @@ export default function LogViewer() {
   const [showDeleteModal, setShowDeleteModal] = useState<string | null>(null);
   const [showSaveModal, setShowSaveModal] = useState(false);
   const [showUnsavedModal, setShowUnsavedModal] = useState(false);
+  const [showExitModal, setShowExitModal] = useState(false);
+  const [showGenerateReportModal, setShowGenerateReportModal] = useState(false);
 
   const mockLogs: LogEntry[] = [
     {
