@@ -204,7 +204,7 @@ const PhotoCapture: React.FC<PhotoCaptureProps> = () => {
       <CompleteRecordingModal
         isOpen={showCompleteModal}
         onClose={handleCompleteModalClose}
-        onComplete={handleCompleteRecording}
+        onConfirm={handleCompleteRecording}
         mode="photo"
       />
     </div>
