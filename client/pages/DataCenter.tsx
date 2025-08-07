@@ -120,6 +120,9 @@ export default function DataCenter() {
   const [showTimeDropdown, setShowTimeDropdown] = useState(false);
   const [showSortDropdown, setShowSortDropdown] = useState(false);
 
+  const timeDropdownRef = useRef<HTMLDivElement>(null);
+  const sortDropdownRef = useRef<HTMLDivElement>(null);
+
   const formatOptions = [
     { key: 'all', label: '全部' },
     { key: 'video', label: '录像' },
