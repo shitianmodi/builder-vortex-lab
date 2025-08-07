@@ -11,6 +11,7 @@ import Dashboard from "./pages/Dashboard";
 import DataCenter from "./pages/DataCenter";
 import RecordingReview from "./pages/RecordingReview";
 import RecordingInspection from "./pages/RecordingInspection";
+import ReportDetail from "./pages/ReportDetail";
 import LogView from "./pages/LogView";
 import InformedConsent from "./pages/InformedConsent";
 import StudentSelection from "./pages/StudentSelection";
