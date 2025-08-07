@@ -44,7 +44,7 @@ const mockLogData: LogEntry[] = [
     description: '笔记内容文本，笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本',
     noteContent: {
       thumbnails: ['thumbnail1', 'thumbnail2'],
-      text: '笔记内容文本，笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本'
+      text: '笔记内容文本，笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔���内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本'
     }
   }
 ];
@@ -70,11 +70,11 @@ export default function LogView() {
   );
 
   const renderTableHeader = () => (
-    <div className="flex w-full px-6 py-2 items-center gap-6 rounded-[73px] bg-[#EEF1FA]">
-      <div className="w-20 flex-shrink-0 text-[#7E90B0] font-['HONOR_Sans_CN'] text-base font-semibold">
+    <div className="flex w-full px-6 py-3 items-center gap-6 rounded-[73px] bg-[#EEF1FA]">
+      <div className="w-24 flex-shrink-0 text-[#7E90B0] font-['HONOR_Sans_CN'] text-base font-semibold">
         时间
       </div>
-      <div className="w-20 flex-shrink-0 text-[#7E90B0] font-['HONOR_Sans_CN'] text-base font-semibold">
+      <div className="w-24 flex-shrink-0 text-[#7E90B0] font-['HONOR_Sans_CN'] text-base font-semibold">
         类型
       </div>
       <div className="flex-1 text-[#7E90B0] font-['HONOR_Sans_CN'] text-base font-semibold">
@@ -85,11 +85,11 @@ export default function LogView() {
 
   const renderTableRow = (entry: LogEntry) => (
     <div key={entry.id} className="flex flex-col">
-      <div className="flex px-3 py-2 items-center gap-6 min-h-[44px]">
-        <div className="w-20 text-[#324459] font-['HONOR_Sans_CN'] text-base font-normal leading-7">
+      <div className="flex px-6 py-3 items-center gap-6 min-h-[52px]">
+        <div className="w-24 text-[#324459] font-['HONOR_Sans_CN'] text-base font-normal leading-7">
           {entry.time}
         </div>
-        <div className="w-20 text-[#324459] font-['HONOR_Sans_CN'] text-base font-normal leading-7">
+        <div className="w-24 text-[#324459] font-['HONOR_Sans_CN'] text-base font-normal leading-7">
           {entry.type}
         </div>
         <div className="flex-1">
@@ -126,24 +126,24 @@ export default function LogView() {
   return (
     <div className="w-full h-screen bg-[#EEF1FA] flex flex-col">
       {/* Top Navigation Bar */}
-      <div className="flex w-full px-14 py-14 justify-between items-center h-32">
-        <div className="flex items-center gap-9">
+      <div className="flex w-full px-6 lg:px-14 py-6 lg:py-14 justify-between items-center min-h-[80px] lg:h-32">
+        <div className="flex items-center gap-4 lg:gap-9">
           <div className="flex items-center gap-4">
-            <button 
+            <button
               onClick={() => navigate('/data-center')}
-              className="flex h-12 px-4 py-2 justify-center items-center gap-2 rounded-2xl border border-[#004DA9] hover:bg-[#EEF1FA] transition-colors"
+              className="flex h-10 lg:h-12 px-3 lg:px-4 py-2 justify-center items-center gap-2 rounded-2xl border border-[#004DA9] hover:bg-[#EEF1FA] transition-colors"
             >
-              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+              <svg className="w-5 h-5 lg:w-6 lg:h-6" viewBox="0 0 24 24" fill="none">
                 <path fillRule="evenodd" clipRule="evenodd" d="M12.5028 4.08329C12.9324 4.52768 12.9324 5.24818 12.5028 5.69257L7.50563 10.8621H19.15C19.7575 10.8621 20.25 11.3715 20.25 12C20.25 12.6285 19.7575 13.1379 19.15 13.1379H7.50564L12.5028 18.3074C12.9324 18.7518 12.9324 19.4723 12.5028 19.9167C12.0732 20.3611 11.3768 20.3611 10.9472 19.9167L4.07218 12.8046C3.64261 12.3602 3.64261 11.6398 4.07218 11.1954L10.9472 4.08329C11.3768 3.6389 12.0732 3.6389 12.5028 4.08329Z" fill="#004DA9"/>
               </svg>
-              <div className="text-[#004DA9] text-lg font-semibold">返回</div>
+              <div className="text-[#004DA9] text-base lg:text-lg font-semibold">返回</div>
             </button>
           </div>
-          <div className="w-[1px] h-6 bg-[#B6C2DA]"></div>
-          <div className="text-[#3D526C] text-2xl font-semibold">查看日志</div>
+          <div className="hidden lg:block w-[1px] h-6 bg-[#B6C2DA]"></div>
+          <div className="text-[#3D526C] text-xl lg:text-2xl font-semibold">查看日志</div>
         </div>
 
-        <div className="flex items-center gap-9">
+        <div className="flex items-center gap-4 lg:gap-9">
           <div className="flex items-center gap-4">
             <div className="text-[#324459] text-base font-normal leading-7">显示</div>
             <div className="flex items-center gap-[6px]">
@@ -181,19 +181,19 @@ export default function LogView() {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex flex-1 gap-6 px-14 pb-14 overflow-hidden">
+      <div className="flex flex-1 gap-6 px-6 lg:px-14 pb-6 lg:pb-14 overflow-hidden">
         {/* Left Content - Table */}
-        <div className="flex w-[836px] px-6 py-3 flex-col justify-center items-center rounded-3xl bg-white overflow-hidden">
+        <div className="flex flex-1 min-w-0 max-w-none lg:max-w-[836px] px-3 lg:px-6 py-3 flex-col justify-center items-center rounded-3xl bg-white overflow-hidden">
           <div className="flex w-full flex-col justify-center items-center gap-4 flex-1 overflow-hidden">
             {renderTableHeader()}
-            <div className="flex-1 w-full overflow-y-auto">
+            <div className="flex-1 w-full overflow-y-auto overflow-x-auto">
               {filteredData.map(renderTableRow)}
             </div>
           </div>
         </div>
 
         {/* Right Content - Sidebar */}
-        <div className="flex flex-col w-[468px] gap-4">
+        <div className="hidden lg:flex flex-col w-[468px] gap-4">
           {/* Sandbox Products */}
           <div className="flex flex-col items-start gap-4">
             <div className="flex items-center gap-4 self-stretch">
