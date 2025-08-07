@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import InformedConsent from "./pages/InformedConsent";
 import StudentSelection from "./pages/StudentSelection";
+import VideoRecording from "./pages/VideoRecording";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
