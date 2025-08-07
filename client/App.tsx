@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
+import DataCenter from "./pages/DataCenter";
 import InformedConsent from "./pages/InformedConsent";
 import StudentSelection from "./pages/StudentSelection";
 import VideoRecording from "./pages/VideoRecording";
