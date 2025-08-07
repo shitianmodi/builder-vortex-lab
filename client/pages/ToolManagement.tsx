@@ -31,7 +31,7 @@ const mockTools: ToolItem[] = [
   },
   {
     id: '2',
-    name: '沙具���称一行字',
+    name: '沙具名称一行字',
     color: '#F55D5D',
     colorName: '红色',
     category: '类型名称',
@@ -259,6 +259,9 @@ export default function ToolManagement() {
           <h1 className="text-[#3D526C] text-3xl font-semibold">沙具管理</h1>
           <div className="text-[#7E90B0] text-sm">模型版本 1.0.2</div>
         </div>
+
+        {/* Separator Line */}
+        <div className="w-full h-[1px] bg-[#E2E7F0] mx-14 mb-6" />
 
         <div className="flex gap-8 px-14 pb-14 flex-1">
           {/* Left Filter Panel */}
