@@ -230,6 +230,16 @@ export default function ToolManagement() {
     setShowMoveModal(false);
   };
 
+  const handleToolClick = (tool: ToolItem) => {
+    setSelectedTool(tool);
+    setShowToolDetail(true);
+  };
+
+  const handleCloseToolDetail = () => {
+    setShowToolDetail(false);
+    setSelectedTool(null);
+  };
+
   return (
     <div className="w-full h-screen bg-[#EEF1FA] flex">
       {/* Navigation Sidebar */}
