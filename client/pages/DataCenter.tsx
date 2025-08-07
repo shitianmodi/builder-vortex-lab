@@ -122,6 +122,9 @@ export default function DataCenter() {
   const [showTimeDropdown, setShowTimeDropdown] = useState(false);
   const [showSortDropdown, setShowSortDropdown] = useState(false);
   const [showWarning, setShowWarning] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasNetworkError, setHasNetworkError] = useState(false);
+  const [hasData, setHasData] = useState(true);
 
   const timeDropdownRef = useRef<HTMLDivElement>(null);
   const sortDropdownRef = useRef<HTMLDivElement>(null);
