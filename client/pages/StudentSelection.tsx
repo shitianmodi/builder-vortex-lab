@@ -129,12 +129,7 @@ export default function StudentSelection() {
           <div className="flex justify-center">
             <button
               onClick={handleStart}
-              disabled={!selectedStudent}
-              className={`px-8 py-3 rounded-2xl text-2xl font-semibold min-w-[200px] transition-all ${
-                selectedStudent 
-                  ? 'bg-blue-700 text-white hover:bg-blue-800 cursor-pointer' 
-                  : 'bg-gray-400 text-white cursor-not-allowed'
-              }`}
+              className="px-8 py-3 rounded-2xl text-2xl font-semibold min-w-[200px] bg-blue-700 text-white hover:bg-blue-800 cursor-pointer transition-all"
             >
               开始
             </button>
