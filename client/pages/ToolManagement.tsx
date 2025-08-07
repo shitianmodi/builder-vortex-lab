@@ -52,7 +52,7 @@ const mockTools: ToolItem[] = [
     name: '沙具名称一行字',
     color: '#F55D5D',
     colorName: '红色',
-    category: '类型名称',
+    category: '类型名��',
     subCategory: '子类型名称',
     image: 'https://cdn.builder.io/api/v1/image/assets%2F633abf5e59cd4a2c979cb3a5ea2346f6%2F06b4710a09b04a72b9bbf1460daf50dc?format=webp&width=800',
   },
@@ -89,7 +89,7 @@ const mockTools: ToolItem[] = [
     color: '#F55D5D',
     colorName: '红色',
     category: '类型名称',
-    subCategory: '子类型名称',
+    subCategory: '子类型��称',
     image: 'https://cdn.builder.io/api/v1/image/assets%2F633abf5e59cd4a2c979cb3a5ea2346f6%2F06b4710a09b04a72b9bbf1460daf50dc?format=webp&width=800',
   },
   {
@@ -184,6 +184,9 @@ export default function ToolManagement() {
   const [showMoveModal, setShowMoveModal] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('类型名称');
   const [selectedSubCategory, setSelectedSubCategory] = useState('子类型名称');
+  const [showSortDropdown, setShowSortDropdown] = useState(false);
+
+  const sortOptions = ['名称A-Z', '名称Z-A'];
 
   const toggleSelectAll = () => {
     setSelectAll(!selectAll);
