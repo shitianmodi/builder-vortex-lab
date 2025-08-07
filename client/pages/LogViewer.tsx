@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import EditWaterEntry from '../components/EditWaterEntry';
+import EditVoiceEntry from '../components/EditVoiceEntry';
+import ConfirmationModals from '../components/ConfirmationModals';
 
 type FilterType = 'all' | '沙具' | '水' | '语音' | '笔记';
 
@@ -15,6 +18,10 @@ interface LogEntry {
 export default function LogViewer() {
   const navigate = useNavigate();
   const [activeFilters, setActiveFilters] = useState<FilterType[]>(['沙具', '水', '语音']);
+  const [editingLog, setEditingLog] = useState<LogEntry | null>(null);
+  const [showDeleteModal, setShowDeleteModal] = useState<string | null>(null);
+  const [showSaveModal, setShowSaveModal] = useState(false);
+  const [showUnsavedModal, setShowUnsavedModal] = useState(false);
 
   const mockLogs: LogEntry[] = [
     {
@@ -45,7 +52,7 @@ export default function LogViewer() {
       id: '5',
       time: '00:00',
       type: '笔记',
-      description: '笔记内容文本，笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本',
+      description: '笔记内容文本，笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容���本笔记内容文本笔记内容文本',
       noteThumbnails: ['thumbnail1', 'thumbnail2']
     }
   ];
@@ -70,11 +77,31 @@ export default function LogViewer() {
   const filteredLogs = mockLogs.filter(log => activeFilters.includes(log.type));
 
   const handleEdit = (logId: string) => {
-    console.log('Edit log:', logId);
+    const logToEdit = mockLogs.find(log => log.id === logId);
+    if (logToEdit) {
+      setEditingLog(logToEdit);
+    }
   };
 
   const handleDelete = (logId: string) => {
-    console.log('Delete log:', logId);
+    setShowDeleteModal(logId);
+  };
+
+  const handleSaveEdit = (data: any) => {
+    console.log('Saving edit:', data);
+    setShowSaveModal(true);
+  };
+
+  const handleConfirmDelete = () => {
+    console.log('Deleting log:', showDeleteModal);
+    setShowDeleteModal(null);
+  };
+
+  const handleCloseModal = () => {
+    setEditingLog(null);
+    setShowDeleteModal(null);
+    setShowSaveModal(false);
+    setShowUnsavedModal(false);
   };
 
   return (
@@ -226,6 +253,57 @@ export default function LogViewer() {
           </div>
         </div>
       </div>
+
+      {/* Edit Modals */}
+      {editingLog && editingLog.type === '水' && (
+        <EditWaterEntry
+          isOpen={true}
+          onClose={() => setEditingLog(null)}
+          onSave={handleSaveEdit}
+          initialData={{
+            time: { minutes: 0, seconds: 0 },
+            position: '左上'
+          }}
+        />
+      )}
+
+      {editingLog && editingLog.type === '语音' && (
+        <EditVoiceEntry
+          isOpen={true}
+          onClose={() => setEditingLog(null)}
+          onSave={handleSaveEdit}
+          initialData={{
+            startTime: { minutes: 0, seconds: 0 },
+            endTime: { minutes: 0, seconds: 0 },
+            transcription: editingLog.description
+          }}
+        />
+      )}
+
+      {/* Confirmation Modals */}
+      <ConfirmationModals
+        type="delete"
+        isOpen={!!showDeleteModal}
+        onClose={() => setShowDeleteModal(null)}
+        onConfirm={handleConfirmDelete}
+        logTime={mockLogs.find(log => log.id === showDeleteModal)?.time || '00:00'}
+      />
+
+      <ConfirmationModals
+        type="save"
+        isOpen={showSaveModal}
+        onClose={() => setShowSaveModal(false)}
+      />
+
+      <ConfirmationModals
+        type="unsaved"
+        isOpen={showUnsavedModal}
+        onClose={() => setShowUnsavedModal(false)}
+        onConfirm={() => {
+          setShowUnsavedModal(false);
+          navigate('/video-recording');
+        }}
+      />
     </div>
   );
 }
