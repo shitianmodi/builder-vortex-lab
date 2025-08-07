@@ -112,23 +112,66 @@ const mockData: HistoryRecord[] = [
 export default function DataCenter() {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedFormat, setSelectedFormat] = useState<'video' | 'photo' | 'all'>('video');
-  const [selectedStatus, setSelectedStatus] = useState<'pending' | 'generating' | 'completed' | 'all'>('pending');
+  const [selectedFormat, setSelectedFormat] = useState<'video' | 'photo' | 'all'>('all');
+  const [selectedStatus, setSelectedStatus] = useState<'pending' | 'generating' | 'completed' | 'all'>('all');
   const [selectedTime, setSelectedTime] = useState('2025年7月');
   const [sortBy, setSortBy] = useState('时间最近');
+  const [selectedRecords, setSelectedRecords] = useState<string[]>([]);
 
   const formatOptions = [
+    { key: 'all', label: '全部' },
     { key: 'video', label: '录像' },
     { key: 'photo', label: '拍照' }
   ];
 
   const statusOptions = [
+    { key: 'all', label: '全部' },
     { key: 'pending', label: '未生成' },
     { key: 'generating', label: '生成中' },
     { key: 'completed', label: '已完成' }
   ];
 
-  const indexNumbers = Array.from({ length: 26 }, (_, i) => 31 - i);
+  const alphabetLetters = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
+
+  const handleRecordSelect = (recordId: string) => {
+    setSelectedRecords(prev =>
+      prev.includes(recordId)
+        ? prev.filter(id => id !== recordId)
+        : [...prev, recordId]
+    );
+  };
+
+  const handleSelectAll = () => {
+    if (selectedRecords.length === filteredData.length) {
+      setSelectedRecords([]);
+    } else {
+      setSelectedRecords(filteredData.map(record => record.id));
+    }
+  };
+
+  const handleCancelSelection = () => {
+    setSelectedRecords([]);
+  };
+
+  // Filter the data based on selected filters
+  const filteredData = mockData.filter(record => {
+    // Format filter
+    if (selectedFormat !== 'all' && record.type !== selectedFormat) {
+      return false;
+    }
+
+    // Status filter
+    if (selectedStatus !== 'all' && record.status !== selectedStatus) {
+      return false;
+    }
+
+    // Search filter
+    if (searchQuery && !record.clientName.toLowerCase().includes(searchQuery.toLowerCase())) {
+      return false;
+    }
+
+    return true;
+  });
 
   const renderTag = (tag: string) => {
     const tagStyles = {
@@ -145,11 +188,15 @@ export default function DataCenter() {
   };
 
   const renderThumbnail = (type: 'video' | 'photo') => {
+    const imageUrl = type === 'video'
+      ? "https://cdn.builder.io/api/v1/image/assets%2F633abf5e59cd4a2c979cb3a5ea2346f6%2F6a13877e87804742ae027ea9d3d6fa5f?format=webp&width=800"
+      : "https://cdn.builder.io/api/v1/image/assets%2F633abf5e59cd4a2c979cb3a5ea2346f6%2Fe72803d614184e0eb73c0ad4be906450?format=webp&width=800";
+
     return (
       <div className="w-[185px] h-[104px] rounded-lg overflow-hidden relative flex-shrink-0">
-        <img 
-          src="https://api.builder.io/api/v1/image/assets/TEMP/e34a83b7b0cb6d992b3d8c429519b88a0a514fb5?width=406" 
-          alt="预览图" 
+        <img
+          src={imageUrl}
+          alt="预览图"
           className="w-full h-full object-cover"
         />
         {type === 'video' && (
@@ -165,12 +212,27 @@ export default function DataCenter() {
   };
 
   const renderHistoryCard = (record: HistoryRecord) => {
+    const isSelected = selectedRecords.includes(record.id);
+
     return (
       <div key={record.id} className="flex w-full max-w-[544px] p-6 flex-col justify-center items-start gap-4 rounded-3xl bg-white">
         <div className="flex w-full h-[22px] flex-col items-start gap-3">
           <div className="flex justify-between items-center self-stretch">
             <div className="flex items-center gap-3">
-              <div className="w-5 h-5 rounded border border-[#004DA9]"></div>
+              <div
+                className={`w-5 h-5 rounded cursor-pointer flex items-center justify-center ${
+                  isSelected
+                    ? 'bg-[#004DA9] border border-[#004DA9]'
+                    : 'border border-[#004DA9]'
+                }`}
+                onClick={() => handleRecordSelect(record.id)}
+              >
+                {isSelected && (
+                  <svg className="w-3 h-3" viewBox="0 0 12 9" fill="none">
+                    <path d="M1.06079 4.22L3.73746 6.71667L10.9375 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                )}
+              </div>
               {record.tags?.map((tag, index) => (
                 <React.Fragment key={index}>
                   {renderTag(tag)}
@@ -321,7 +383,7 @@ export default function DataCenter() {
                 {formatOptions.map((option) => (
                   <button
                     key={option.key}
-                    onClick={() => setSelectedFormat(option.key as 'video' | 'photo')}
+                    onClick={() => setSelectedFormat(option.key as 'video' | 'photo' | 'all')}
                     className={`flex h-9 px-4 py-2 items-center gap-1 rounded-2xl ${
                       selectedFormat === option.key
                         ? 'bg-[#004DA9] text-white'
@@ -341,7 +403,7 @@ export default function DataCenter() {
                 {statusOptions.map((option) => (
                   <button
                     key={option.key}
-                    onClick={() => setSelectedStatus(option.key as 'pending' | 'generating' | 'completed')}
+                    onClick={() => setSelectedStatus(option.key as 'pending' | 'generating' | 'completed' | 'all')}
                     className={`flex h-9 px-4 py-2 items-center gap-1 rounded-2xl ${
                       selectedStatus === option.key
                         ? 'bg-[#004DA9] text-white'
@@ -387,22 +449,22 @@ export default function DataCenter() {
         <div className="flex gap-6">
           {/* History Records */}
           <div className="flex-1 grid grid-cols-1 xl:grid-cols-2 gap-6 max-h-[calc(100vh-300px)] overflow-y-auto">
-            {mockData.map(renderHistoryCard)}
+            {filteredData.map(renderHistoryCard)}
           </div>
 
           {/* Index Sidebar */}
           <div className="flex flex-col w-7 gap-1">
-            {indexNumbers.map((num, index) => (
+            {alphabetLetters.map((letter, index) => (
               <div
-                key={num}
-                className={`flex h-7 flex-col justify-center items-center aspect-square rounded-2xl ${
+                key={letter}
+                className={`flex h-7 flex-col justify-center items-center aspect-square rounded-2xl cursor-pointer ${
                   index === 0 ? 'bg-[#A8BDE8]' : ''
                 }`}
               >
                 <div className={`text-sm font-normal ${
                   index === 0 ? 'text-white' : 'text-[#7E90B0]'
                 }`}>
-                  {num}
+                  {letter}
                 </div>
               </div>
             ))}
