@@ -7,7 +7,7 @@ interface CompleteRecordingModalProps {
   mode?: 'video' | 'photo';
 }
 
-export default function CompleteRecordingModal({ isOpen, onClose, onConfirm }: CompleteRecordingModalProps) {
+export default function CompleteRecordingModal({ isOpen, onClose, onConfirm, mode = 'video' }: CompleteRecordingModalProps) {
   const [selectedOption, setSelectedOption] = useState<'direct' | 'review' | 'save'>('direct');
 
   if (!isOpen) return null;
