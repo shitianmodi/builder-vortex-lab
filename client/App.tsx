@@ -48,6 +48,7 @@ const App = () => (
           <Route path="/video-playback" element={<VideoPlayback />} />
           <Route path="/log-viewer" element={<LogViewer />} />
           <Route path="/tool-management" element={<ToolManagement />} />
+          <Route path="/edit-tool/:id" element={<EditTool />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
