@@ -116,7 +116,7 @@ export default function Dashboard() {
               <div className="flex-1 space-y-8">
                 {/* Recording Content */}
                 <div>
-                  <label className="block text-base mb-4" style={{ color: 'var(--text-g2)' }}>
+                  <label className="block text-base mb-4 text-gray-600">
                     记录内容
                   </label>
                   <div className="space-y-4">
