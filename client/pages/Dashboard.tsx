@@ -18,8 +18,12 @@ export default function Dashboard() {
     const time = now.toTimeString().slice(0, 5);
     const days = ['日', '一', '二', '三', '四', '五', '六'];
     const dayOfWeek = `周${days[now.getDay()]}`;
-    
+
     return `${date}  ${time}    ${dayOfWeek}`;
+  };
+
+  const handleStartVideoRecognition = () => {
+    navigate('/informed-consent');
   };
 
   return (
