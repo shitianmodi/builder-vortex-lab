@@ -30,6 +30,11 @@ export default function Index() {
     setCurrentState('login');
   };
 
+  const handleLogin = () => {
+    // Navigate to dashboard after login
+    navigate('/dashboard');
+  };
+
   const handleRetryInput = () => {
     setCurrentState('binding');
   };
