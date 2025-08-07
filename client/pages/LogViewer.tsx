@@ -57,7 +57,7 @@ export default function LogViewer() {
       id: '5',
       time: '00:00',
       type: '笔记',
-      description: '笔记内容文本，笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本',
+      description: '笔记内容文本，笔记内容文本笔记内容文本笔记内容文本��记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本笔记内容文本',
       noteThumbnails: ['thumbnail1', 'thumbnail2']
     }
   ];
@@ -75,7 +75,7 @@ export default function LogViewer() {
 
   const toggleFilter = (filter: FilterType) => {
     if (filter === 'all') {
-      setActiveFilters(['��具', '水', '语���', '���记']);
+      setActiveFilters(['��具', '水', '语���', '笔记']);
       return;
     }
 
@@ -407,6 +407,20 @@ export default function LogViewer() {
           setShowUnsavedModal(false);
           navigate('/video-recording');
         }}
+      />
+
+      {/* Exit Check Modal */}
+      <ExitCheckModal
+        isOpen={showExitModal}
+        onClose={() => setShowExitModal(false)}
+        onConfirm={handleExitConfirm}
+      />
+
+      {/* Generate Report Modal */}
+      <GenerateReportModal
+        isOpen={showGenerateReportModal}
+        onClose={() => setShowGenerateReportModal(false)}
+        onConfirm={handleGenerateReportConfirm}
       />
     </div>
   );
