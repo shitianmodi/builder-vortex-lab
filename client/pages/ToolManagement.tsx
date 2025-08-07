@@ -527,6 +527,54 @@ export default function ToolManagement() {
             </button>
           </div>
         )}
+
+        {/* Move to Category Modal */}
+        {showMoveModal && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="w-[400px] bg-white rounded-3xl p-8 flex flex-col items-center gap-6">
+              {/* Modal Title */}
+              <h2 className="text-[#3D526C] text-2xl font-semibold text-center">移动到分类</h2>
+
+              {/* Dropdown Section */}
+              <div className="flex flex-col gap-4 w-full">
+                {/* Category Dropdown */}
+                <div className="flex h-12 px-4 py-1 justify-between items-center w-full rounded-2xl bg-[#F4F4F5]">
+                  <span className="text-[#3D526C] text-base">{selectedCategory}</span>
+                  <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M13.6007 4.89906C13.2687 4.56711 12.7305 4.56711 12.3986 4.89906L7.99961 9.29802L3.60065 4.89906C3.2687 4.56711 2.73051 4.56711 2.39857 4.89906C2.06662 5.231 2.06662 5.76919 2.39857 6.10114L7.39857 11.1011C7.73051 11.4331 8.2687 11.4331 8.60065 11.1011L13.6007 6.10114C13.9326 5.76919 13.9326 5.231 13.6007 4.89906Z" fill="#3D526C"/>
+                  </svg>
+                </div>
+
+                {/* Subcategory Dropdown */}
+                <div className="flex h-12 px-4 py-1 justify-between items-center w-full rounded-2xl bg-[#F4F4F5]">
+                  <span className="text-[#3D526C] text-base">{selectedSubCategory}</span>
+                  <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M13.6007 4.89906C13.2687 4.56711 12.7305 4.56711 12.3986 4.89906L7.99961 9.29802L3.60065 4.89906C3.2687 4.56711 2.73051 4.56711 2.39857 4.89906C2.06662 5.231 2.06662 5.76919 2.39857 6.10114L7.39857 11.1011C7.73051 11.4331 8.2687 11.4331 8.60065 11.1011L13.6007 6.10114C13.9326 5.76919 13.9326 5.231 13.6007 4.89906Z" fill="#3D526C"/>
+                  </svg>
+                </div>
+              </div>
+
+              {/* Separator Line */}
+              <div className="w-full h-[1px] bg-[#E2E7F0]" />
+
+              {/* Action Buttons */}
+              <div className="flex justify-center items-center gap-6 w-full">
+                <button
+                  onClick={handleConfirmMove}
+                  className="flex-1 flex px-4 py-3 justify-center items-center rounded-2xl border border-[#004DA9] hover:bg-[#f0f4ff] transition-colors"
+                >
+                  <span className="text-[#004DA9] text-lg font-semibold">确认</span>
+                </button>
+                <button
+                  onClick={handleCancelMove}
+                  className="flex-1 flex px-4 py-3 justify-center items-center rounded-2xl bg-[#004DA9] hover:bg-[#003d8c] transition-colors"
+                >
+                  <span className="text-white text-lg font-semibold">取消</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
