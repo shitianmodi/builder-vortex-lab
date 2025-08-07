@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import CompleteRecordingModal from "../components/CompleteRecordingModal";
 
 type RecordingState = "recording" | "paused";
 type LogsState = "expanded" | "collapsed";
