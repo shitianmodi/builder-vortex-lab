@@ -382,13 +382,39 @@ export default function DataCenter() {
         <div className="flex justify-between items-center mb-8">
           <div className="flex items-center gap-4">
             {/* Evaluation Time */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 relative">
               <div className="text-[#324459] text-base font-normal">评估时间</div>
-              <div className="flex w-[150px] px-4 py-1 justify-between items-center rounded-2xl border border-[#B6C2DA]">
-                <div className="text-[#3D526C] text-base font-normal">{selectedTime}</div>
-                <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M13.6007 4.89906C13.2687 4.56711 12.7305 4.56711 12.3986 4.89906L7.99961 9.29802L3.60065 4.89906C3.2687 4.56711 2.73051 4.56711 2.39857 4.89906C2.06662 5.231 2.06662 5.76919 2.39857 6.10114L7.39857 11.1011C7.73051 11.4331 8.2687 11.4331 8.60065 11.1011L13.6007 6.10114C13.9326 5.76919 13.9326 5.231 13.6007 4.89906Z" fill="#3D526C"/>
-                </svg>
+              <div className="relative">
+                <button
+                  onClick={() => setShowTimeDropdown(!showTimeDropdown)}
+                  className="flex w-[150px] px-4 py-1 justify-between items-center rounded-2xl border border-[#B6C2DA] hover:border-[#004DA9] transition-colors"
+                >
+                  <div className="text-[#3D526C] text-base font-normal">{selectedTime}</div>
+                  <svg className={`w-4 h-4 transition-transform ${showTimeDropdown ? 'rotate-180' : ''}`} viewBox="0 0 16 16" fill="none">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M13.6007 4.89906C13.2687 4.56711 12.7305 4.56711 12.3986 4.89906L7.99961 9.29802L3.60065 4.89906C3.2687 4.56711 2.73051 4.56711 2.39857 4.89906C2.06662 5.231 2.06662 5.76919 2.39857 6.10114L7.39857 11.1011C7.73051 11.4331 8.2687 11.4331 8.60065 11.1011L13.6007 6.10114C13.9326 5.76919 13.9326 5.231 13.6007 4.89906Z" fill="#3D526C"/>
+                  </svg>
+                </button>
+
+                {showTimeDropdown && (
+                  <div className="absolute top-full left-0 mt-1 w-[150px] p-2 bg-white rounded-2xl border border-[#B6C2DA] shadow-[0_0_10px_3px_rgba(126,144,176,0.20)] z-10">
+                    {timeOptions.map((option) => (
+                      <button
+                        key={option}
+                        onClick={() => {
+                          setSelectedTime(option);
+                          setShowTimeDropdown(false);
+                        }}
+                        className={`w-full text-left px-2 py-1 rounded-2xl text-base font-normal transition-colors ${
+                          selectedTime === option
+                            ? 'bg-[#F4F4F5] text-[#3D526C]'
+                            : 'text-[#3D526C] hover:bg-[#F4F4F5]'
+                        }`}
+                      >
+                        {option}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
 
