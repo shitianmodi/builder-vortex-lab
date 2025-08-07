@@ -26,10 +26,8 @@ export default function StudentSelection() {
   };
 
   const handleStart = () => {
-    if (selectedStudent) {
-      // Navigate to video recording page
-      navigate('/video-recording');
-    }
+    // Navigate to video recording page regardless of student selection
+    navigate('/video-recording');
   };
 
   return (
