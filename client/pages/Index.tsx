@@ -291,7 +291,8 @@ export default function Index() {
           忘记密码请联系学校设备管理员
         </span>
         
-        <button 
+        <button
+          onClick={handleLogin}
           className="px-6 py-3 rounded-2xl text-white text-lg font-semibold min-w-[160px] lg:min-w-[200px]"
           style={{ backgroundColor: 'var(--theme-blue-00)' }}
         >
