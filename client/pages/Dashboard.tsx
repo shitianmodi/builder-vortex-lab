@@ -108,8 +108,8 @@ export default function Dashboard() {
               className="w-full h-60 object-cover rounded-lg mb-8"
             />
             
-            <div className="flex gap-18">
-              <h2 className="text-2xl font-semibold mb-8" style={{ color: 'var(--text-b1)' }}>
+            <div className="flex gap-16">
+              <h2 className="text-2xl font-semibold mb-8 text-gray-800">
                 录像识别
               </h2>
               
