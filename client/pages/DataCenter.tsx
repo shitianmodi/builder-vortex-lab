@@ -394,7 +394,7 @@ export default function DataCenter() {
           </div>
           <div className="text-[#7E90B0] text-sm font-normal max-w-[270px]">
             *沙盘过程视频仅临时��存72小时<br />
-            如有需要可自行下载到本地
+            如有需��可自行下载到本地
           </div>
         </div>
 
@@ -529,6 +529,12 @@ export default function DataCenter() {
             </div>
             <button className="flex h-9 px-4 py-2 justify-center items-center gap-2 rounded-2xl bg-[#004DA9]">
               <div className="text-white text-lg font-semibold">搜索</div>
+            </button>
+            <button
+              onClick={() => navigate('/recording-review')}
+              className="flex h-9 px-4 py-2 justify-center items-center gap-2 rounded-2xl border border-[#004DA9] hover:bg-[#EEF1FA] transition-colors"
+            >
+              <div className="text-[#004DA9] text-lg font-semibold">录像检查</div>
             </button>
           </div>
         </div>
