@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import DataCleanupWarning from '../components/DataCleanupWarning';
 
 interface HistoryRecord {
   id: string;
@@ -394,7 +395,7 @@ export default function DataCenter() {
           </div>
           <div className="text-[#7E90B0] text-sm font-normal max-w-[270px]">
             *沙盘过程视频仅临时��存72小时<br />
-            如有需��可自行下载到本地
+            如有需要可自行下载到本地
           </div>
         </div>
 
